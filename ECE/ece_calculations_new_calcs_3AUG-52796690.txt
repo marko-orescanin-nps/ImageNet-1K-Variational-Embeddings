@@ -1,0 +1,133 @@
+2024-08-03 11:14:38.526792: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2024-08-03 11:14:38.542038: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:485] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2024-08-03 11:14:38.558790: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:8454] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2024-08-03 11:14:38.563842: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1452] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2024-08-03 11:14:38.576012: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2024-08-03 11:14:39.665897: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+Grabbing Dictionary # 1:
+Mean ECE across 1 run of 20 samples for VIT Dropout Coastal: 0.16446475259307772
+Mean Accuracy across 1 run of 20 samples for VIT Dropout Coastal: 0.9316875000000001
+Grabbing Dictionary # 2:
+Mean ECE across 1 run of 20 samples for VIT Dropout Coastal: 0.16347217996511607
+Mean Accuracy across 1 run of 20 samples for VIT Dropout Coastal: 0.9303125
+Grabbing Dictionary # 3:
+Mean ECE across 1 run of 20 samples for VIT Dropout Coastal: 0.1636502922810614
+Mean Accuracy across 1 run of 20 samples for VIT Dropout Coastal: 0.9311875000000001
+Grabbing Dictionary # 4:
+Mean ECE across 1 run of 20 samples for VIT Dropout Coastal: 0.16434042575675994
+Mean Accuracy across 1 run of 20 samples for VIT Dropout Coastal: 0.9304999999999998
+Grabbing Dictionary # 5:
+Mean ECE across 1 run of 20 samples for VIT Dropout Coastal: 0.16496707456652077
+Mean Accuracy across 1 run of 20 samples for VIT Dropout Coastal: 0.93125
+Grabbing Dictionary # 6:
+Mean ECE across 1 run of 20 samples for VIT Dropout Coastal: 0.16360443133302033
+Mean Accuracy across 1 run of 20 samples for VIT Dropout Coastal: 0.9305625
+Grabbing Dictionary # 7:
+Mean ECE across 1 run of 20 samples for VIT Dropout Coastal: 0.16437400283291936
+Mean Accuracy across 1 run of 20 samples for VIT Dropout Coastal: 0.9310625
+Grabbing Dictionary # 8:
+Mean ECE across 1 run of 20 samples for VIT Dropout Coastal: 0.16223156650830062
+Mean Accuracy across 1 run of 20 samples for VIT Dropout Coastal: 0.930125
+Grabbing Dictionary # 9:
+Mean ECE across 1 run of 20 samples for VIT Dropout Coastal: 0.1651085431929678
+Mean Accuracy across 1 run of 20 samples for VIT Dropout Coastal: 0.9317499999999999
+Grabbing Dictionary # 10:
+Mean ECE across 1 run of 20 samples for VIT Dropout Coastal: 0.16520721679646524
+Mean Accuracy across 1 run of 20 samples for VIT Dropout Coastal: 0.930875
+***Accuracy Total Mean:  0    0.930931
+dtype: float64
+***ECE Total Mean:  0    0.164142
+dtype: float64
+***Accuracy Total Std:  0    0.000556
+dtype: float64
+***ECE Total Std:  0    0.000917
+dtype: float64
+***Accuracy Total Confidence Interval:  0    0.000345
+dtype: float64
+***ECE Total Confidence Interval:  0    0.000569
+dtype: float64
+Grabbing Dictionary # 1:
+Mean ECE across 1 run of 20 samples for MC Dropout ImageNet: 0.04074039037456364
+Mean Accuracy across 1 run of 20 samples for MC Dropout ImageNet: 0.739815
+Grabbing Dictionary # 2:
+Mean ECE across 1 run of 20 samples for MC Dropout ImageNet: 0.04074411743030697
+Mean Accuracy across 1 run of 20 samples for MC Dropout ImageNet: 0.7403029999999999
+Grabbing Dictionary # 3:
+Mean ECE across 1 run of 20 samples for MC Dropout ImageNet: 0.040311979378473015
+Mean Accuracy across 1 run of 20 samples for MC Dropout ImageNet: 0.7404200000000001
+Grabbing Dictionary # 4:
+Mean ECE across 1 run of 20 samples for MC Dropout ImageNet: 0.040333066752888266
+Mean Accuracy across 1 run of 20 samples for MC Dropout ImageNet: 0.7404400000000001
+Grabbing Dictionary # 5:
+Mean ECE across 1 run of 20 samples for MC Dropout ImageNet: 0.04060741785958409
+Mean Accuracy across 1 run of 20 samples for MC Dropout ImageNet: 0.740035
+Grabbing Dictionary # 6:
+Mean ECE across 1 run of 20 samples for MC Dropout ImageNet: 0.040719508436005566
+Mean Accuracy across 1 run of 20 samples for MC Dropout ImageNet: 0.7398860000000002
+Grabbing Dictionary # 7:
+Mean ECE across 1 run of 20 samples for MC Dropout ImageNet: 0.04088347710073739
+Mean Accuracy across 1 run of 20 samples for MC Dropout ImageNet: 0.7401840000000002
+Grabbing Dictionary # 8:
+Mean ECE across 1 run of 20 samples for MC Dropout ImageNet: 0.04061187555107475
+Mean Accuracy across 1 run of 20 samples for MC Dropout ImageNet: 0.7402470000000001
+Grabbing Dictionary # 9:
+Mean ECE across 1 run of 20 samples for MC Dropout ImageNet: 0.04029331408736482
+Mean Accuracy across 1 run of 20 samples for MC Dropout ImageNet: 0.7403519999999999
+Grabbing Dictionary # 10:
+Mean ECE across 1 run of 20 samples for MC Dropout ImageNet: 0.04063491498001292
+Mean Accuracy across 1 run of 20 samples for MC Dropout ImageNet: 0.740255
+***Accuracy Total Mean:  0    0.740194
+dtype: float64
+***ECE Total Mean:  0    0.040588
+dtype: float64
+***Accuracy Total Std:  0    0.000216
+dtype: float64
+***ECE Total Std:  0    0.000206
+dtype: float64
+***Accuracy Total Confidence Interval:  0    0.000134
+dtype: float64
+***ECE Total Confidence Interval:  0    0.000128
+dtype: float64
+Grabbing Dictionary # 1:
+Mean ECE across 1 run of 20 samples for VI Flipout ImageNet: 0.09405983202591167
+Mean Accuracy across 1 run of 20 samples for VI Flipout ImageNet: 0.7130580000000001
+Grabbing Dictionary # 2:
+Mean ECE across 1 run of 20 samples for VI Flipout ImageNet: 0.09382185323282331
+Mean Accuracy across 1 run of 20 samples for VI Flipout ImageNet: 0.7133269999999999
+Grabbing Dictionary # 3:
+Mean ECE across 1 run of 20 samples for VI Flipout ImageNet: 0.09392002993440254
+Mean Accuracy across 1 run of 20 samples for VI Flipout ImageNet: 0.7132149999999999
+Grabbing Dictionary # 4:
+Mean ECE across 1 run of 20 samples for VI Flipout ImageNet: 0.09394332133151218
+Mean Accuracy across 1 run of 20 samples for VI Flipout ImageNet: 0.713178
+Grabbing Dictionary # 5:
+Mean ECE across 1 run of 20 samples for VI Flipout ImageNet: 0.0939962142384313
+Mean Accuracy across 1 run of 20 samples for VI Flipout ImageNet: 0.7131510000000001
+Grabbing Dictionary # 6:
+Mean ECE across 1 run of 20 samples for VI Flipout ImageNet: 0.09403658052700758
+Mean Accuracy across 1 run of 20 samples for VI Flipout ImageNet: 0.713103
+Grabbing Dictionary # 7:
+Mean ECE across 1 run of 20 samples for VI Flipout ImageNet: 0.0939317170595154
+Mean Accuracy across 1 run of 20 samples for VI Flipout ImageNet: 0.713195
+Grabbing Dictionary # 8:
+Mean ECE across 1 run of 20 samples for VI Flipout ImageNet: 0.0940276806134507
+Mean Accuracy across 1 run of 20 samples for VI Flipout ImageNet: 0.7130940000000001
+Grabbing Dictionary # 9:
+Mean ECE across 1 run of 20 samples for VI Flipout ImageNet: 0.09405833567583188
+Mean Accuracy across 1 run of 20 samples for VI Flipout ImageNet: 0.713084
+Grabbing Dictionary # 10:
+Mean ECE across 1 run of 20 samples for VI Flipout ImageNet: 0.09393935855933652
+Mean Accuracy across 1 run of 20 samples for VI Flipout ImageNet: 0.713187
+***Accuracy Total Mean:  0    0.713159
+dtype: float64
+***ECE Total Mean:  0    0.093973
+dtype: float64
+***Accuracy Total Std:  0    0.00008
+dtype: float64
+***ECE Total Std:  0    0.000076
+dtype: float64
+***Accuracy Total Confidence Interval:  0    0.000049
+dtype: float64
+***ECE Total Confidence Interval:  0    0.000047
+dtype: float64

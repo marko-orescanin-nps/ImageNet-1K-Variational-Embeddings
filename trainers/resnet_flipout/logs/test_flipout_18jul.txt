@@ -1,0 +1,25 @@
+2024-07-18 20:43:33.498017: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2024-07-18 20:43:33.499863: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:32] Could not find cuda drivers on your machine, GPU will not be used.
+2024-07-18 20:43:33.502728: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:32] Could not find cuda drivers on your machine, GPU will not be used.
+2024-07-18 20:43:33.511819: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:485] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2024-07-18 20:43:33.525977: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:8454] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2024-07-18 20:43:33.530275: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1452] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2024-07-18 20:43:33.541288: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2024-07-18 20:43:34.608387: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+/home/lucian.rombado/.conda/envs/vi_flipout_clone/lib/python3.9/site-packages/edward2/__init__.py:36: UserWarning: JAX backend for Edward2 is not available.
+  warnings.warn("JAX backend for Edward2 is not available.")
+/home/lucian.rombado/.conda/envs/vi_flipout_clone/lib/python3.9/site-packages/edward2/__init__.py:43: UserWarning: NumPy backend for Edward2 is not available.
+  warnings.warn("NumPy backend for Edward2 is not available.")
+/home/lucian.rombado/.conda/envs/vi_flipout_clone/lib/python3.9/site-packages/edward2/__init__.py:51: UserWarning: TensorFlow backend for Edward2 is not available.
+  warnings.warn("TensorFlow backend for Edward2 is not available.")
+/home/lucian.rombado/.conda/envs/vi_flipout_clone/lib/python3.9/site-packages/edward2/__init__.py:55: UserWarning: No backend is available for Edward2. Please install dependencies for JAX, NumPy, or TensorFlow.
+  warnings.warn(
+Traceback (most recent call last):
+  File "/data/kraken/coastal_project/coastaluncertainty/trainers/resnet_flipout/training_code/task.py", line 21, in <module>
+    import models
+  File "/data/kraken/coastal_project/coastaluncertainty/trainers/resnet_flipout/training_code/models.py", line 2, in <module>
+    from resnet50VI_ub import *
+  File "/data/kraken/coastal_project/coastaluncertainty/trainers/resnet_flipout/training_code/resnet50VI_ub.py", line 18, in <module>
+    Conv2DFlipout = functools.partial(ed.layers.Conv2DFlipout, use_bias=False)
+AttributeError: module 'edward2' has no attribute 'layers'
