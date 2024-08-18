@@ -1,0 +1,90 @@
+2023-11-22 12:40:18.245421: I tensorflow/core/util/port.cc:111] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2023-11-22 12:40:18.292687: E tensorflow/compiler/xla/stream_executor/cuda/cuda_dnn.cc:9342] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2023-11-22 12:40:18.292755: E tensorflow/compiler/xla/stream_executor/cuda/cuda_fft.cc:609] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2023-11-22 12:40:18.292791: E tensorflow/compiler/xla/stream_executor/cuda/cuda_blas.cc:1518] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2023-11-22 12:40:18.302574: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+WARNING:tensorflow:From /home/lucian.rombado/.conda/envs/thesis_work/lib/python3.9/site-packages/tensorflow/python/ops/distributions/distribution.py:259: ReparameterizationType.__init__ (from tensorflow.python.ops.distributions.distribution) is deprecated and will be removed after 2019-01-01.
+Instructions for updating:
+The TensorFlow Distributions library has moved to TensorFlow Probability (https://github.com/tensorflow/probability). You should update all references to use `tfp.distributions` instead of `tf.distributions`.
+WARNING:tensorflow:From /home/lucian.rombado/.conda/envs/thesis_work/lib/python3.9/site-packages/tensorflow/python/ops/distributions/bernoulli.py:165: RegisterKL.__init__ (from tensorflow.python.ops.distributions.kullback_leibler) is deprecated and will be removed after 2019-01-01.
+Instructions for updating:
+The TensorFlow Distributions library has moved to TensorFlow Probability (https://github.com/tensorflow/probability). You should update all references to use `tfp.distributions` instead of `tf.distributions`.
+Grabbing Dictionary # 1:
+ACCURACY: 0.394640042038886
+NLL: [40.819645 49.964714 34.773212 ... 46.55219  25.979961 23.526161]
+VARIANCE 0.1743422
+NORMAL_ENTROPY: 0.27525815
+ALEATORIC UNCERTAINTY: 0.4683967
+EPISTEMIC UNCERTAINTY: 0.3573778
+Grabbing Dictionary # 2:
+ACCURACY: 0.39096163951655283
+NLL: [39.359333 35.254574 35.211197 ... 36.273224 28.379047 25.325218]
+VARIANCE 0.17686093
+NORMAL_ENTROPY: 0.2765128
+ALEATORIC UNCERTAINTY: 0.46769574
+EPISTEMIC UNCERTAINTY: 0.36184263
+Grabbing Dictionary # 3:
+ACCURACY: 0.39096163951655283
+NLL: [41.01606  35.50247  40.449356 ... 40.229893 28.173073 22.911978]
+VARIANCE 0.17704526
+NORMAL_ENTROPY: 0.27766263
+ALEATORIC UNCERTAINTY: 0.47017705
+EPISTEMIC UNCERTAINTY: 0.36281076
+Grabbing Dictionary # 4:
+ACCURACY: 0.3883342091434577
+NLL: [42.64543  41.1707   38.877148 ... 35.76585  27.133644 22.916813]
+VARIANCE 0.17799644
+NORMAL_ENTROPY: 0.27743557
+ALEATORIC UNCERTAINTY: 0.46834755
+EPISTEMIC UNCERTAINTY: 0.36395922
+Grabbing Dictionary # 5:
+ACCURACY: 0.38885969521807673
+NLL: [43.785393 40.256638 38.198463 ... 51.850613 28.8111   22.901686]
+VARIANCE 0.17733818
+NORMAL_ENTROPY: 0.27642822
+ALEATORIC UNCERTAINTY: 0.4670713
+EPISTEMIC UNCERTAINTY: 0.3622134
+Grabbing Dictionary # 6:
+ACCURACY: 0.3914871255911718
+NLL: [40.2432   49.416733 37.1127   ... 44.06885  26.026756 23.303574]
+VARIANCE 0.17797376
+NORMAL_ENTROPY: 0.27642795
+ALEATORIC UNCERTAINTY: 0.46624568
+EPISTEMIC UNCERTAINTY: 0.36303827
+Grabbing Dictionary # 7:
+ACCURACY: 0.38675775091960063
+NLL: [42.246864 41.989784 42.459965 ... 36.28229  28.90742  22.547955]
+VARIANCE 0.17780013
+NORMAL_ENTROPY: 0.27704915
+ALEATORIC UNCERTAINTY: 0.46849293
+EPISTEMIC UNCERTAINTY: 0.36265448
+Grabbing Dictionary # 8:
+ACCURACY: 0.3925380977404099
+NLL: [41.0783   47.016983 37.083893 ... 30.613049 28.77188  21.966839]
+VARIANCE 0.17807575
+NORMAL_ENTROPY: 0.27781782
+ALEATORIC UNCERTAINTY: 0.46902564
+EPISTEMIC UNCERTAINTY: 0.3644279
+Grabbing Dictionary # 9:
+ACCURACY: 0.39936941671045717
+NLL: [42.38005  37.993584 36.8775   ... 39.58104  25.256283 25.375233]
+VARIANCE 0.17909697
+NORMAL_ENTROPY: 0.27688906
+ALEATORIC UNCERTAINTY: 0.4669774
+EPISTEMIC UNCERTAINTY: 0.3636898
+Grabbing Dictionary # 10:
+ACCURACY: 0.3872832369942196
+NLL: [40.00282  39.06909  40.33085  ... 42.02465  30.170872 22.391006]
+VARIANCE 0.17753588
+NORMAL_ENTROPY: 0.27585796
+ALEATORIC UNCERTAINTY: 0.46512944
+EPISTEMIC UNCERTAINTY: 0.36244446
+Aleatoric List:  [0.4683967, 0.46769574, 0.47017705, 0.46834755, 0.4670713, 0.46624568, 0.46849293, 0.46902564, 0.4669774, 0.46512944]
+Epistemic List:  [0.3573778, 0.36184263, 0.36281076, 0.36395922, 0.3622134, 0.36303827, 0.36265448, 0.3644279, 0.3636898, 0.36244446]
+Total Entropy List:  [0.82577455, 0.8295384, 0.8329878, 0.8323067, 0.8292846, 0.82928395, 0.83114743, 0.8334535, 0.83066726, 0.82757396]
+total dataframe:  Empty DataFrame
+Columns: []
+Index: []
+total dataframe mean():  Series([], dtype: float64)
+total dataframe std():  Series([], dtype: float64)

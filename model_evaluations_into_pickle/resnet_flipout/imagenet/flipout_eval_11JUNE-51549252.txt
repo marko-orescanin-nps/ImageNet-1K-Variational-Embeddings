@@ -1,0 +1,491 @@
+2024-06-12 14:09:21.603896: I tensorflow/core/util/port.cc:111] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2024-06-12 14:09:22.606350: E tensorflow/compiler/xla/stream_executor/cuda/cuda_dnn.cc:9342] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2024-06-12 14:09:22.606412: E tensorflow/compiler/xla/stream_executor/cuda/cuda_fft.cc:609] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2024-06-12 14:09:22.610619: E tensorflow/compiler/xla/stream_executor/cuda/cuda_blas.cc:1518] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2024-06-12 14:09:23.071104: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2024-06-12 14:09:25.708610: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2024-06-12 14:09:36.486030: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1886] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 47370 MB memory:  -> device: 0, name: Quadro RTX 8000, pci bus id: 0000:3d:00.0, compute capability: 7.5
+2024-06-12 14:09:36.487969: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1886] Created device /job:localhost/replica:0/task:0/device:GPU:1 with 47370 MB memory:  -> device: 1, name: Quadro RTX 8000, pci bus id: 0000:3f:00.0, compute capability: 7.5
+2024-06-12 14:09:37.174901: I tensorflow/tsl/platform/default/subprocess.cc:304] Start cannot spawn child process: No such file or directory
+Model input shape:  (None, 224, 224, 3)
+Model output shape:  (None, 1000)
+Model number of weights:  51113064
+W0612 14:09:42.458373 140541473298240 __init__.py:23] Skipped importing the TFDSBuilderFromSQLClientData used when loading the CIFAR subpopulation dataset due to ImportError. Try installing uncertainty baselines with the `datasets` extras.
+Traceback (most recent call last):
+  File "/home/lucian.rombado/.conda/envs/vi_flipout/lib/python3.9/site-packages/uncertainty_baselines/datasets/tfds/__init__.py", line 21, in <module>
+    from uncertainty_baselines.datasets.tfds.tfds_builder_from_sql_client_data import TFDSBuilderFromSQLClientData  # pylint: disable=g-import-not-at-top
+  File "/home/lucian.rombado/.conda/envs/vi_flipout/lib/python3.9/site-packages/uncertainty_baselines/datasets/tfds/tfds_builder_from_sql_client_data.py", line 27, in <module>
+    import tensorflow_federated as tff
+ModuleNotFoundError: No module named 'tensorflow_federated'
+W0612 14:09:43.029484 140541473298240 datasets.py:66] Skipped importing the SMCalflow dataset due to ImportError. Try installing uncertainty baselines with the `datasets` extras.
+Traceback (most recent call last):
+  File "/home/lucian.rombado/.conda/envs/vi_flipout/lib/python3.9/site-packages/uncertainty_baselines/datasets/datasets.py", line 63, in <module>
+    from uncertainty_baselines.datasets.smcalflow import MultiWoZDataset  # pylint: disable=g-import-not-at-top
+  File "/home/lucian.rombado/.conda/envs/vi_flipout/lib/python3.9/site-packages/uncertainty_baselines/datasets/smcalflow.py", line 40, in <module>
+    import seqio
+ModuleNotFoundError: No module named 'seqio'
+W0612 14:09:43.096066 140541473298240 __init__.py:77] Skipped importing the SMCalflow dataset due to ImportError. Try installing uncertainty baselines with the `datasets` extras.
+Traceback (most recent call last):
+  File "/home/lucian.rombado/.conda/envs/vi_flipout/lib/python3.9/site-packages/uncertainty_baselines/datasets/__init__.py", line 74, in <module>
+    from uncertainty_baselines.datasets.smcalflow import MultiWoZDataset  # pylint: disable=g-import-not-at-top
+  File "/home/lucian.rombado/.conda/envs/vi_flipout/lib/python3.9/site-packages/uncertainty_baselines/datasets/smcalflow.py", line 40, in <module>
+    import seqio
+ModuleNotFoundError: No module named 'seqio'
+I0612 14:09:43.115178 140541473298240 dataset_info.py:599] Load dataset info from /data/eric.eckstrand/uncertainty_baselines/imagenet/imagenet2012/5.1.0
+I0612 14:09:43.147339 140541473298240 dataset_info.py:691] For 'imagenet2012/5.1.0': fields info.[description, location, splits, module_name] differ on disk and in the code. Keeping the one from code.
+I0612 14:09:43.200687 140541473298240 logging_logger.py:49] Constructing tf.data.Dataset imagenet2012 for split validation, from /data/eric.eckstrand/uncertainty_baselines/imagenet/imagenet2012/5.1.0
+2024-06-12 14:09:43.202941: I tensorflow/core/grappler/optimizers/data/replicate_on_split.cc:32] Running replicate on split optimization
+W0612 14:09:43.693067 140541473298240 options.py:619] options.experimental_threading is deprecated. Use options.threading instead.
+W0612 14:09:43.693182 140541473298240 options.py:619] options.experimental_threading is deprecated. Use options.threading instead.
+built model!
+Starting 10 runs of 20
+Iteration 1
+2024-06-12 14:10:26.553945: W tensorflow/core/grappler/costs/op_level_cost_estimator.cc:693] Error in PredictCost() for the op: op: "Softmax" attr { key: "T" value { type: DT_FLOAT } } attr { key: "_has_manual_control_dependencies" value { b: true } } inputs { dtype: DT_FLOAT shape { unknown_rank: true } } device { type: "GPU" vendor: "NVIDIA" model: "Quadro RTX 8000" frequency: 1770 num_cores: 72 environment { key: "architecture" value: "7.5" } environment { key: "cuda" value: "11080" } environment { key: "cudnn" value: "8600" } num_registers: 65536 l1_cache_size: 24576 l2_cache_size: 6291456 shared_memory_size_per_multiprocessor: 65536 memory_size: 49671634944 bandwidth: 672096000 } outputs { dtype: DT_FLOAT shape { unknown_rank: true } }
+2024-06-12 14:10:27.169703: I tensorflow/compiler/xla/stream_executor/cuda/cuda_dnn.cc:442] Loaded cuDNN version 8902
+2024-06-12 14:10:27.565592: I tensorflow/tsl/platform/default/subprocess.cc:304] Start cannot spawn child process: No such file or directory
+Iteration 2
+Iteration 3
+Iteration 4
+Iteration 5
+Iteration 6
+Iteration 7
+Iteration 8
+Iteration 9
+Iteration 10
+WARNING:tensorflow:Detecting that an object or model or tf.train.Checkpoint is being deleted with unrestored values. See the following logs for the specific values in question. To silence these warnings, use `status.expect_partial()`. See https://www.tensorflow.org/api_docs/python/tf/train/Checkpoint#restorefor details about the status object returned by the restore function.
+W0613 03:27:55.697768 140541473298240 checkpoint.py:208] Detecting that an object or model or tf.train.Checkpoint is being deleted with unrestored values. See the following logs for the specific values in question. To silence these warnings, use `status.expect_partial()`. See https://www.tensorflow.org/api_docs/python/tf/train/Checkpoint#restorefor details about the status object returned by the restore function.
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._iterations
+W0613 03:27:55.698841 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._iterations
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._current_learning_rate
+W0613 03:27:55.698912 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._current_learning_rate
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.1
+W0613 03:27:55.698962 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.1
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.2
+W0613 03:27:55.699003 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.2
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.3
+W0613 03:27:55.699050 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.3
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.4
+W0613 03:27:55.699090 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.4
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.5
+W0613 03:27:55.699128 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.5
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.6
+W0613 03:27:55.699171 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.6
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.7
+W0613 03:27:55.699210 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.7
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.8
+W0613 03:27:55.699248 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.8
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.9
+W0613 03:27:55.699286 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.9
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.10
+W0613 03:27:55.699324 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.10
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.11
+W0613 03:27:55.699362 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.11
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.12
+W0613 03:27:55.699400 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.12
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.13
+W0613 03:27:55.699438 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.13
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.14
+W0613 03:27:55.699476 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.14
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.15
+W0613 03:27:55.699513 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.15
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.16
+W0613 03:27:55.699550 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.16
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.17
+W0613 03:27:55.699589 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.17
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.18
+W0613 03:27:55.699633 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.18
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.19
+W0613 03:27:55.699671 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.19
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.20
+W0613 03:27:55.699720 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.20
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.21
+W0613 03:27:55.699756 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.21
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.22
+W0613 03:27:55.699803 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.22
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.23
+W0613 03:27:55.699838 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.23
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.24
+W0613 03:27:55.699872 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.24
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.25
+W0613 03:27:55.699907 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.25
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.26
+W0613 03:27:55.699941 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.26
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.27
+W0613 03:27:55.699975 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.27
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.28
+W0613 03:27:55.700011 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.28
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.29
+W0613 03:27:55.700045 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.29
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.30
+W0613 03:27:55.700080 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.30
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.31
+W0613 03:27:55.700114 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.31
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.32
+W0613 03:27:55.700152 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.32
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.33
+W0613 03:27:55.700188 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.33
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.34
+W0613 03:27:55.700227 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.34
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.35
+W0613 03:27:55.700263 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.35
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.36
+W0613 03:27:55.700297 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.36
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.37
+W0613 03:27:55.700331 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.37
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.38
+W0613 03:27:55.700366 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.38
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.39
+W0613 03:27:55.700400 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.39
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.40
+W0613 03:27:55.700434 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.40
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.41
+W0613 03:27:55.700470 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.41
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.42
+W0613 03:27:55.700505 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.42
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.43
+W0613 03:27:55.700540 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.43
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.44
+W0613 03:27:55.700575 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.44
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.45
+W0613 03:27:55.700609 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.45
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.46
+W0613 03:27:55.700644 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.46
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.47
+W0613 03:27:55.700678 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.47
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.48
+W0613 03:27:55.700712 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.48
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.49
+W0613 03:27:55.700747 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.49
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.50
+W0613 03:27:55.700786 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.50
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.51
+W0613 03:27:55.700821 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.51
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.52
+W0613 03:27:55.700855 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.52
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.53
+W0613 03:27:55.700889 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.53
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.54
+W0613 03:27:55.700925 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.54
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.55
+W0613 03:27:55.700960 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.55
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.56
+W0613 03:27:55.700994 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.56
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.57
+W0613 03:27:55.701028 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.57
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.58
+W0613 03:27:55.701063 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.58
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.59
+W0613 03:27:55.701097 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.59
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.60
+W0613 03:27:55.701132 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.60
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.61
+W0613 03:27:55.701169 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.61
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.62
+W0613 03:27:55.701204 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.62
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.63
+W0613 03:27:55.701238 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.63
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.64
+W0613 03:27:55.701273 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.64
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.65
+W0613 03:27:55.701311 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.65
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.66
+W0613 03:27:55.701346 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.66
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.67
+W0613 03:27:55.701381 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.67
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.68
+W0613 03:27:55.701415 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.68
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.69
+W0613 03:27:55.701449 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.69
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.70
+W0613 03:27:55.701484 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.70
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.71
+W0613 03:27:55.701518 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.71
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.72
+W0613 03:27:55.701552 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.72
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.73
+W0613 03:27:55.701586 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.73
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.74
+W0613 03:27:55.701620 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.74
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.75
+W0613 03:27:55.701655 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.75
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.76
+W0613 03:27:55.701689 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.76
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.77
+W0613 03:27:55.701722 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.77
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.78
+W0613 03:27:55.701757 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.78
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.79
+W0613 03:27:55.701791 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.79
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.80
+W0613 03:27:55.701825 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.80
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.81
+W0613 03:27:55.701864 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.81
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.82
+W0613 03:27:55.701898 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.82
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.83
+W0613 03:27:55.701933 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.83
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.84
+W0613 03:27:55.701967 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.84
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.85
+W0613 03:27:55.702000 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.85
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.86
+W0613 03:27:55.702035 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.86
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.87
+W0613 03:27:55.702069 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.87
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.88
+W0613 03:27:55.702104 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.88
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.89
+W0613 03:27:55.702138 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.89
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.90
+W0613 03:27:55.702176 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.90
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.91
+W0613 03:27:55.702212 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.91
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.92
+W0613 03:27:55.702246 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.92
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.93
+W0613 03:27:55.702280 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.93
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.94
+W0613 03:27:55.702315 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.94
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.95
+W0613 03:27:55.702349 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.95
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.96
+W0613 03:27:55.702388 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.96
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.97
+W0613 03:27:55.702423 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.97
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.98
+W0613 03:27:55.702457 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.98
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.99
+W0613 03:27:55.702492 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.99
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.100
+W0613 03:27:55.702526 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.100
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.101
+W0613 03:27:55.702560 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.101
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.102
+W0613 03:27:55.702595 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.102
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.103
+W0613 03:27:55.702629 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.103
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.104
+W0613 03:27:55.702663 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.104
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.105
+W0613 03:27:55.702698 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.105
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.106
+W0613 03:27:55.702731 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.106
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.107
+W0613 03:27:55.702766 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.107
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.108
+W0613 03:27:55.702800 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.108
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.109
+W0613 03:27:55.702834 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.109
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.110
+W0613 03:27:55.702868 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.110
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.111
+W0613 03:27:55.702906 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.111
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.112
+W0613 03:27:55.702941 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.112
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.113
+W0613 03:27:55.702975 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.113
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.114
+W0613 03:27:55.703008 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.114
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.115
+W0613 03:27:55.703043 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.115
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.116
+W0613 03:27:55.703076 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.116
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.117
+W0613 03:27:55.703110 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.117
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.118
+W0613 03:27:55.703144 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.118
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.119
+W0613 03:27:55.703181 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.119
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.120
+W0613 03:27:55.703215 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.120
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.121
+W0613 03:27:55.703249 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.121
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.122
+W0613 03:27:55.703283 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.122
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.123
+W0613 03:27:55.703317 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.123
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.124
+W0613 03:27:55.703351 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.124
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.125
+W0613 03:27:55.703386 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.125
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.126
+W0613 03:27:55.703419 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.126
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.127
+W0613 03:27:55.703457 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.127
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.128
+W0613 03:27:55.703492 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.128
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.129
+W0613 03:27:55.703526 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.129
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.130
+W0613 03:27:55.703561 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.130
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.131
+W0613 03:27:55.703595 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.131
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.132
+W0613 03:27:55.703629 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.132
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.133
+W0613 03:27:55.703664 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.133
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.134
+W0613 03:27:55.703698 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.134
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.135
+W0613 03:27:55.703732 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.135
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.136
+W0613 03:27:55.703767 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.136
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.137
+W0613 03:27:55.703801 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.137
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.138
+W0613 03:27:55.703835 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.138
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.139
+W0613 03:27:55.703870 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.139
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.140
+W0613 03:27:55.703903 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.140
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.141
+W0613 03:27:55.703938 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.141
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.142
+W0613 03:27:55.703976 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.142
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.143
+W0613 03:27:55.704010 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.143
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.144
+W0613 03:27:55.704046 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.144
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.145
+W0613 03:27:55.704080 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.145
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.146
+W0613 03:27:55.704114 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.146
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.147
+W0613 03:27:55.704151 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.147
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.148
+W0613 03:27:55.704185 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.148
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.149
+W0613 03:27:55.704220 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.149
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.150
+W0613 03:27:55.704254 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.150
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.151
+W0613 03:27:55.704289 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.151
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.152
+W0613 03:27:55.704323 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.152
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.153
+W0613 03:27:55.704357 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.153
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.154
+W0613 03:27:55.704391 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.154
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.155
+W0613 03:27:55.704425 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.155
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.156
+W0613 03:27:55.704458 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.156
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.157
+W0613 03:27:55.704493 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.157
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.158
+W0613 03:27:55.704532 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.158
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.159
+W0613 03:27:55.704567 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.159
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.160
+W0613 03:27:55.704601 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.160
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.161
+W0613 03:27:55.704635 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.161
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.162
+W0613 03:27:55.704669 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.162
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.163
+W0613 03:27:55.704703 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.163
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.164
+W0613 03:27:55.704736 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.164
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.165
+W0613 03:27:55.704771 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.165
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.166
+W0613 03:27:55.704806 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.166
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.167
+W0613 03:27:55.704840 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.167
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.168
+W0613 03:27:55.704874 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.168
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.169
+W0613 03:27:55.704908 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.169
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.170
+W0613 03:27:55.704943 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.170
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.171
+W0613 03:27:55.704977 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.171
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.172
+W0613 03:27:55.705010 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.172
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.173
+W0613 03:27:55.705049 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.173
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.174
+W0613 03:27:55.705085 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.174
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.175
+W0613 03:27:55.705119 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.175
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.176
+W0613 03:27:55.705157 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.176
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.177
+W0613 03:27:55.705190 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.177
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.178
+W0613 03:27:55.705225 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.178
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.179
+W0613 03:27:55.705259 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.179
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.180
+W0613 03:27:55.705294 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.180
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.181
+W0613 03:27:55.705328 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.181
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.182
+W0613 03:27:55.705362 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.182
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.183
+W0613 03:27:55.705397 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.183
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.184
+W0613 03:27:55.705431 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.184
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.185
+W0613 03:27:55.705465 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.185
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.186
+W0613 03:27:55.705500 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.186
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.187
+W0613 03:27:55.705534 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.187
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.188
+W0613 03:27:55.705573 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.188
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.189
+W0613 03:27:55.705608 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.189
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.190
+W0613 03:27:55.705642 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.190
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.191
+W0613 03:27:55.705677 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.191
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.192
+W0613 03:27:55.705711 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.192
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.193
+W0613 03:27:55.705744 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.193
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.194
+W0613 03:27:55.705779 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.194
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.195
+W0613 03:27:55.705813 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.195
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.196
+W0613 03:27:55.705847 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.196
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.197
+W0613 03:27:55.705882 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.197
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.198
+W0613 03:27:55.705915 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.198
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.199
+W0613 03:27:55.705950 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.199
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.200
+W0613 03:27:55.705984 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.200
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.201
+W0613 03:27:55.706017 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.201
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.202
+W0613 03:27:55.706052 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.202
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.203
+W0613 03:27:55.706087 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.203
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.204
+W0613 03:27:55.706127 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.204
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.205
+W0613 03:27:55.706164 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.205
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.206
+W0613 03:27:55.706197 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.206
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.207
+W0613 03:27:55.706232 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.207
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.208
+W0613 03:27:55.706266 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.208
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.209
+W0613 03:27:55.706300 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.209
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.210
+W0613 03:27:55.706335 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.210
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.211
+W0613 03:27:55.706369 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.211
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.212
+W0613 03:27:55.706404 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.212
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.213
+W0613 03:27:55.706438 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.213
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.214
+W0613 03:27:55.706471 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.214
+WARNING:tensorflow:Value in checkpoint could not be found in the restored object: (root).optimizer._variables.215
+W0613 03:27:55.706506 140541473298240 checkpoint.py:217] Value in checkpoint could not be found in the restored object: (root).optimizer._variables.215

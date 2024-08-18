@@ -1,0 +1,110 @@
+2023-11-25 07:25:24.359303: I tensorflow/core/util/port.cc:111] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2023-11-25 07:25:24.406735: E tensorflow/compiler/xla/stream_executor/cuda/cuda_dnn.cc:9342] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2023-11-25 07:25:24.406807: E tensorflow/compiler/xla/stream_executor/cuda/cuda_fft.cc:609] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2023-11-25 07:25:24.406844: E tensorflow/compiler/xla/stream_executor/cuda/cuda_blas.cc:1518] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2023-11-25 07:25:24.416732: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+WARNING:tensorflow:From /home/lucian.rombado/.conda/envs/thesis_work/lib/python3.9/site-packages/tensorflow/python/ops/distributions/distribution.py:259: ReparameterizationType.__init__ (from tensorflow.python.ops.distributions.distribution) is deprecated and will be removed after 2019-01-01.
+Instructions for updating:
+The TensorFlow Distributions library has moved to TensorFlow Probability (https://github.com/tensorflow/probability). You should update all references to use `tfp.distributions` instead of `tf.distributions`.
+WARNING:tensorflow:From /home/lucian.rombado/.conda/envs/thesis_work/lib/python3.9/site-packages/tensorflow/python/ops/distributions/bernoulli.py:165: RegisterKL.__init__ (from tensorflow.python.ops.distributions.kullback_leibler) is deprecated and will be removed after 2019-01-01.
+Instructions for updating:
+The TensorFlow Distributions library has moved to TensorFlow Probability (https://github.com/tensorflow/probability). You should update all references to use `tfp.distributions` instead of `tf.distributions`.
+Grabbing Dictionary # 1:
+/data/kraken/coastal_project/coastal_alaska/vi_flipout/model_metrics.py:93: RuntimeWarning: divide by zero encountered in log
+  return np.sum(-(true_labels * np.log(model_preds)), axis=1)
+ACCURACY: 0.1607987388334209
+NLL: [       inf 128.63445   70.597916 ... 119.011185 127.81009   88.14795 ]
+VARIANCE 0.019430127
+NORMAL_ENTROPY: 0.12006212
+ALEATORIC UNCERTAINTY: 0.32645968
+EPISTEMIC UNCERTAINTY: 0.03372672
+Grabbing Dictionary # 2:
+/data/kraken/coastal_project/coastal_alaska/vi_flipout/model_metrics.py:93: RuntimeWarning: divide by zero encountered in log
+  return np.sum(-(true_labels * np.log(model_preds)), axis=1)
+ACCURACY: 0.16342616920651604
+NLL: [       inf 124.16173   68.7681   ... 124.71727  130.29755   92.206604]
+VARIANCE 0.019446854
+NORMAL_ENTROPY: 0.11991152
+ALEATORIC UNCERTAINTY: 0.32627594
+EPISTEMIC UNCERTAINTY: 0.033458598
+Grabbing Dictionary # 3:
+/data/kraken/coastal_project/coastal_alaska/vi_flipout/model_metrics.py:93: RuntimeWarning: divide by zero encountered in log
+  return np.sum(-(true_labels * np.log(model_preds)), axis=1)
+ACCURACY: 0.1607987388334209
+NLL: [       inf 120.89477   69.09256  ... 125.464966 128.45306   91.80171 ]
+VARIANCE 0.019415818
+NORMAL_ENTROPY: 0.119885586
+ALEATORIC UNCERTAINTY: 0.32597515
+EPISTEMIC UNCERTAINTY: 0.0336816
+Grabbing Dictionary # 4:
+/data/kraken/coastal_project/coastal_alaska/vi_flipout/model_metrics.py:93: RuntimeWarning: divide by zero encountered in log
+  return np.sum(-(true_labels * np.log(model_preds)), axis=1)
+ACCURACY: 0.16342616920651604
+NLL: [       inf 124.13807   69.72436  ... 117.00986  127.429535  92.45433 ]
+VARIANCE 0.019572504
+NORMAL_ENTROPY: 0.12030145
+ALEATORIC UNCERTAINTY: 0.32736003
+EPISTEMIC UNCERTAINTY: 0.03354431
+Grabbing Dictionary # 5:
+/data/kraken/coastal_project/coastal_alaska/vi_flipout/model_metrics.py:93: RuntimeWarning: divide by zero encountered in log
+  return np.sum(-(true_labels * np.log(model_preds)), axis=1)
+ACCURACY: 0.16342616920651604
+NLL: [       inf 125.16575   66.65251  ... 120.05471  126.727936  93.56555 ]
+VARIANCE 0.019493595
+NORMAL_ENTROPY: 0.12022819
+ALEATORIC UNCERTAINTY: 0.3270188
+EPISTEMIC UNCERTAINTY: 0.03366582
+Grabbing Dictionary # 6:
+/data/kraken/coastal_project/coastal_alaska/vi_flipout/model_metrics.py:93: RuntimeWarning: divide by zero encountered in log
+  return np.sum(-(true_labels * np.log(model_preds)), axis=1)
+ACCURACY: 0.162375197057278
+NLL: [       inf 127.77929   70.42908  ... 122.43289  126.324524  90.255875]
+VARIANCE 0.019660365
+NORMAL_ENTROPY: 0.12025148
+ALEATORIC UNCERTAINTY: 0.32675683
+EPISTEMIC UNCERTAINTY: 0.03399759
+Grabbing Dictionary # 7:
+/data/kraken/coastal_project/coastal_alaska/vi_flipout/model_metrics.py:93: RuntimeWarning: divide by zero encountered in log
+  return np.sum(-(true_labels * np.log(model_preds)), axis=1)
+ACCURACY: 0.1644771413557541
+NLL: [       inf 120.00964   69.44403  ... 119.913826 127.3088    92.62645 ]
+VARIANCE 0.019761415
+NORMAL_ENTROPY: 0.12008805
+ALEATORIC UNCERTAINTY: 0.32635707
+EPISTEMIC UNCERTAINTY: 0.03390709
+Grabbing Dictionary # 8:
+/data/kraken/coastal_project/coastal_alaska/vi_flipout/model_metrics.py:93: RuntimeWarning: divide by zero encountered in log
+  return np.sum(-(true_labels * np.log(model_preds)), axis=1)
+ACCURACY: 0.16342616920651604
+NLL: [       inf 124.9594    69.82448  ... 120.014465 130.7223    93.68067 ]
+VARIANCE 0.01881569
+NORMAL_ENTROPY: 0.119715005
+ALEATORIC UNCERTAINTY: 0.32639638
+EPISTEMIC UNCERTAINTY: 0.032748595
+Grabbing Dictionary # 9:
+/data/kraken/coastal_project/coastal_alaska/vi_flipout/model_metrics.py:93: RuntimeWarning: divide by zero encountered in log
+  return np.sum(-(true_labels * np.log(model_preds)), axis=1)
+ACCURACY: 0.16395165528113506
+NLL: [       inf 132.8627    71.2203   ... 114.489876 129.63629   90.08942 ]
+VARIANCE 0.01984055
+NORMAL_ENTROPY: 0.12001068
+ALEATORIC UNCERTAINTY: 0.32598537
+EPISTEMIC UNCERTAINTY: 0.03404665
+Grabbing Dictionary # 10:
+/data/kraken/coastal_project/coastal_alaska/vi_flipout/model_metrics.py:93: RuntimeWarning: divide by zero encountered in log
+  return np.sum(-(true_labels * np.log(model_preds)), axis=1)
+ACCURACY: 0.16132422490803994
+NLL: [       inf 121.680305  68.3128   ... 117.542145 130.77493   92.579765]
+VARIANCE 0.019067973
+NORMAL_ENTROPY: 0.11998301
+ALEATORIC UNCERTAINTY: 0.32685095
+EPISTEMIC UNCERTAINTY: 0.03309805
+Aleatoric List:  [0.32645968, 0.32627594, 0.32597515, 0.32736003, 0.3270188, 0.32675683, 0.32635707, 0.32639638, 0.32598537, 0.32685095]
+Epistemic List:  [0.03372672, 0.033458598, 0.0336816, 0.03354431, 0.03366582, 0.03399759, 0.03390709, 0.032748595, 0.03404665, 0.03309805]
+Total Entropy List:  [0.3601864, 0.35973454, 0.35965672, 0.36090434, 0.36068457, 0.36075446, 0.36026412, 0.35914505, 0.36003205, 0.35994902]
+total dataframe:  Empty DataFrame
+Columns: []
+Index: []
+total dataframe mean():  Series([], dtype: float64)
+total dataframe std():  Series([], dtype: float64)
