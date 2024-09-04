@@ -10,7 +10,7 @@ This repository contains all project source code as well as a Jupyter Notebook w
 ## Roadmap
 The datasets, model checkpoints, and some pickle evaluation files for this project are available for download at https://nps.app.box.com/folder/260201116211 due to GitHub storage limits.
 
-trainers/
+# trainers
     Contains code for training the ResNet50 Deterministic, MC Dropout, and VI Flipout models. There is a bash script in each folder that was used to run the training process. The train .sh file launches the Python code task.py and also contains all of the customizable hyperparameters for each training. The provided task.py files are the main files for performing transfer learning from ImageNet to the coastal dataset. The task.py files load model weights from the provided ImageNet checkpoint and then perform training on the coastal dataset. There is an option to perform either fixed-feature training (where all layers except final classification head remain frozen while transfer learning occurs on the coastal dataset), or fine-tuning training (where a specified number of layers are unfrozen and allowed to train on coastal data). This is controlled by the "training" hyperparameter in the train.sh files.  
     To run the transfer learning, run the files such as train_mcdropout.sh or train_resnet50_flipout.sh. This will save model checkpoints throguhout the training process and output training logs (a .txt file) to view incremental training progress. The model checkpoints produced can be loaded to produce the various visualizations depicted in the paper. 
 model_evaluations_into_pickle/
