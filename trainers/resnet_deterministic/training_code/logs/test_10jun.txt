@@ -1,637 +1,0 @@
-2024-06-11 08:18:36.258004: I tensorflow/core/util/port.cc:111] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
-2024-06-11 08:18:36.294099: E tensorflow/compiler/xla/stream_executor/cuda/cuda_dnn.cc:9342] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
-2024-06-11 08:18:36.294152: E tensorflow/compiler/xla/stream_executor/cuda/cuda_fft.cc:609] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
-2024-06-11 08:18:36.294185: E tensorflow/compiler/xla/stream_executor/cuda/cuda_blas.cc:1518] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
-2024-06-11 08:18:36.300531: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
-To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
-WARNING:tensorflow:From /home/lucian.rombado/.conda/envs/thesis_work/lib/python3.9/site-packages/tensorflow/python/ops/distributions/distribution.py:259: ReparameterizationType.__init__ (from tensorflow.python.ops.distributions.distribution) is deprecated and will be removed after 2019-01-01.
-Instructions for updating:
-The TensorFlow Distributions library has moved to TensorFlow Probability (https://github.com/tensorflow/probability). You should update all references to use `tfp.distributions` instead of `tf.distributions`.
-WARNING:tensorflow:From /home/lucian.rombado/.conda/envs/thesis_work/lib/python3.9/site-packages/tensorflow/python/ops/distributions/bernoulli.py:165: RegisterKL.__init__ (from tensorflow.python.ops.distributions.kullback_leibler) is deprecated and will be removed after 2019-01-01.
-Instructions for updating:
-The TensorFlow Distributions library has moved to TensorFlow Probability (https://github.com/tensorflow/probability). You should update all references to use `tfp.distributions` instead of `tf.distributions`.
-model_dir : /data/kraken/coastal_project/coastaluncertainty/trainers/resnet_deterministic/training_code/models/resnet50_2024-06-11_08-18-35/
-test_dir : /data/cs4321/HW1/test
-train_dir : /data/cs4321/HW1/train
-val_dir : /data/cs4321/HW1/validation
-model_type : resnet50
-regression : False
-input_shape_x : 299
-input_shape_y : 299
-continue_training : False
-trainable : True
-train_layers : 4
-checkpoint_path : None
-predict : False
-num_classes : 8
-num_epochs : 1
-batch_size : 10
-optimizer : SGD
-callback_list : checkpoint, csv_log, early_stopping
-activation_fn : relu
-pool_layer : avg2d
-min_hidden_layers : 0
-max_hidden_layers : 5
-output_drop : True
-embedded_drop : True
-neurons : 80
-base_learning_rate : 0.001
-min_learning_rate : 1e-05
-loss_type : categorical_crossentropy
-eval_metrics : accuracy
-mgpu_run : False
-n_gpus : 1
-use_multiprocessing : True
-workers : 6
-data_augmentation : True
------------HPARAMS------------
-Namespace(model_dir='/data/kraken/coastal_project/coastaluncertainty/trainers/resnet_deterministic/training_code/models/resnet50_2024-06-11_08-18-35/', test_dir='/data/cs4321/HW1/test', train_dir='/data/cs4321/HW1/train', val_dir='/data/cs4321/HW1/validation', model_type='resnet50', regression=False, input_shape_x=299, input_shape_y=299, continue_training=False, trainable=True, train_layers=4, checkpoint_path=None, predict=False, num_classes=8, num_epochs=1, batch_size=10, optimizer='SGD', callback_list='checkpoint, csv_log, early_stopping', activation_fn='relu', pool_layer='avg2d', min_hidden_layers=0, max_hidden_layers=5, output_drop=True, embedded_drop=True, neurons=80, base_learning_rate=0.001, min_learning_rate=1e-05, loss_type='categorical_crossentropy', eval_metrics='accuracy', mgpu_run=False, n_gpus=1, use_multiprocessing=True, workers=6, data_augmentation=True)
------------HPARAMS------------
-Found 6400 files belonging to 8 classes.
-2024-06-11 08:18:40.485634: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1886] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 47221 MB memory:  -> device: 0, name: Quadro RTX 8000, pci bus id: 0000:1a:00.0, compute capability: 7.5
-2024-06-11 08:18:42.007875: I tensorflow/tsl/platform/default/subprocess.cc:304] Start cannot spawn child process: No such file or directory
-Found 1600 files belonging to 8 classes.
-Found 800 files belonging to 8 classes.
-Resnet 50 Regular Base Model: 
-Model: "resnet50"
-__________________________________________________________________________________________________
- Layer (type)                Output Shape                 Param #   Connected to                  
-==================================================================================================
- input_1 (InputLayer)        [(None, 299, 299, 3)]        0         []                            
-                                                                                                  
- conv1_pad (ZeroPadding2D)   (None, 305, 305, 3)          0         ['input_1[0][0]']             
-                                                                                                  
- conv1_conv (Conv2D)         (None, 150, 150, 64)         9472      ['conv1_pad[0][0]']           
-                                                                                                  
- conv1_bn (BatchNormalizati  (None, 150, 150, 64)         256       ['conv1_conv[0][0]']          
- on)                                                                                              
-                                                                                                  
- conv1_relu (Activation)     (None, 150, 150, 64)         0         ['conv1_bn[0][0]']            
-                                                                                                  
- pool1_pad (ZeroPadding2D)   (None, 152, 152, 64)         0         ['conv1_relu[0][0]']          
-                                                                                                  
- pool1_pool (MaxPooling2D)   (None, 75, 75, 64)           0         ['pool1_pad[0][0]']           
-                                                                                                  
- conv2_block1_1_conv (Conv2  (None, 75, 75, 64)           4160      ['pool1_pool[0][0]']          
- D)                                                                                               
-                                                                                                  
- conv2_block1_1_bn (BatchNo  (None, 75, 75, 64)           256       ['conv2_block1_1_conv[0][0]'] 
- rmalization)                                                                                     
-                                                                                                  
- conv2_block1_1_relu (Activ  (None, 75, 75, 64)           0         ['conv2_block1_1_bn[0][0]']   
- ation)                                                                                           
-                                                                                                  
- conv2_block1_2_conv (Conv2  (None, 75, 75, 64)           36928     ['conv2_block1_1_relu[0][0]'] 
- D)                                                                                               
-                                                                                                  
- conv2_block1_2_bn (BatchNo  (None, 75, 75, 64)           256       ['conv2_block1_2_conv[0][0]'] 
- rmalization)                                                                                     
-                                                                                                  
- conv2_block1_2_relu (Activ  (None, 75, 75, 64)           0         ['conv2_block1_2_bn[0][0]']   
- ation)                                                                                           
-                                                                                                  
- conv2_block1_0_conv (Conv2  (None, 75, 75, 256)          16640     ['pool1_pool[0][0]']          
- D)                                                                                               
-                                                                                                  
- conv2_block1_3_conv (Conv2  (None, 75, 75, 256)          16640     ['conv2_block1_2_relu[0][0]'] 
- D)                                                                                               
-                                                                                                  
- conv2_block1_0_bn (BatchNo  (None, 75, 75, 256)          1024      ['conv2_block1_0_conv[0][0]'] 
- rmalization)                                                                                     
-                                                                                                  
- conv2_block1_3_bn (BatchNo  (None, 75, 75, 256)          1024      ['conv2_block1_3_conv[0][0]'] 
- rmalization)                                                                                     
-                                                                                                  
- conv2_block1_add (Add)      (None, 75, 75, 256)          0         ['conv2_block1_0_bn[0][0]',   
-                                                                     'conv2_block1_3_bn[0][0]']   
-                                                                                                  
- conv2_block1_out (Activati  (None, 75, 75, 256)          0         ['conv2_block1_add[0][0]']    
- on)                                                                                              
-                                                                                                  
- conv2_block2_1_conv (Conv2  (None, 75, 75, 64)           16448     ['conv2_block1_out[0][0]']    
- D)                                                                                               
-                                                                                                  
- conv2_block2_1_bn (BatchNo  (None, 75, 75, 64)           256       ['conv2_block2_1_conv[0][0]'] 
- rmalization)                                                                                     
-                                                                                                  
- conv2_block2_1_relu (Activ  (None, 75, 75, 64)           0         ['conv2_block2_1_bn[0][0]']   
- ation)                                                                                           
-                                                                                                  
- conv2_block2_2_conv (Conv2  (None, 75, 75, 64)           36928     ['conv2_block2_1_relu[0][0]'] 
- D)                                                                                               
-                                                                                                  
- conv2_block2_2_bn (BatchNo  (None, 75, 75, 64)           256       ['conv2_block2_2_conv[0][0]'] 
- rmalization)                                                                                     
-                                                                                                  
- conv2_block2_2_relu (Activ  (None, 75, 75, 64)           0         ['conv2_block2_2_bn[0][0]']   
- ation)                                                                                           
-                                                                                                  
- conv2_block2_3_conv (Conv2  (None, 75, 75, 256)          16640     ['conv2_block2_2_relu[0][0]'] 
- D)                                                                                               
-                                                                                                  
- conv2_block2_3_bn (BatchNo  (None, 75, 75, 256)          1024      ['conv2_block2_3_conv[0][0]'] 
- rmalization)                                                                                     
-                                                                                                  
- conv2_block2_add (Add)      (None, 75, 75, 256)          0         ['conv2_block1_out[0][0]',    
-                                                                     'conv2_block2_3_bn[0][0]']   
-                                                                                                  
- conv2_block2_out (Activati  (None, 75, 75, 256)          0         ['conv2_block2_add[0][0]']    
- on)                                                                                              
-                                                                                                  
- conv2_block3_1_conv (Conv2  (None, 75, 75, 64)           16448     ['conv2_block2_out[0][0]']    
- D)                                                                                               
-                                                                                                  
- conv2_block3_1_bn (BatchNo  (None, 75, 75, 64)           256       ['conv2_block3_1_conv[0][0]'] 
- rmalization)                                                                                     
-                                                                                                  
- conv2_block3_1_relu (Activ  (None, 75, 75, 64)           0         ['conv2_block3_1_bn[0][0]']   
- ation)                                                                                           
-                                                                                                  
- conv2_block3_2_conv (Conv2  (None, 75, 75, 64)           36928     ['conv2_block3_1_relu[0][0]'] 
- D)                                                                                               
-                                                                                                  
- conv2_block3_2_bn (BatchNo  (None, 75, 75, 64)           256       ['conv2_block3_2_conv[0][0]'] 
- rmalization)                                                                                     
-                                                                                                  
- conv2_block3_2_relu (Activ  (None, 75, 75, 64)           0         ['conv2_block3_2_bn[0][0]']   
- ation)                                                                                           
-                                                                                                  
- conv2_block3_3_conv (Conv2  (None, 75, 75, 256)          16640     ['conv2_block3_2_relu[0][0]'] 
- D)                                                                                               
-                                                                                                  
- conv2_block3_3_bn (BatchNo  (None, 75, 75, 256)          1024      ['conv2_block3_3_conv[0][0]'] 
- rmalization)                                                                                     
-                                                                                                  
- conv2_block3_add (Add)      (None, 75, 75, 256)          0         ['conv2_block2_out[0][0]',    
-                                                                     'conv2_block3_3_bn[0][0]']   
-                                                                                                  
- conv2_block3_out (Activati  (None, 75, 75, 256)          0         ['conv2_block3_add[0][0]']    
- on)                                                                                              
-                                                                                                  
- conv3_block1_1_conv (Conv2  (None, 38, 38, 128)          32896     ['conv2_block3_out[0][0]']    
- D)                                                                                               
-                                                                                                  
- conv3_block1_1_bn (BatchNo  (None, 38, 38, 128)          512       ['conv3_block1_1_conv[0][0]'] 
- rmalization)                                                                                     
-                                                                                                  
- conv3_block1_1_relu (Activ  (None, 38, 38, 128)          0         ['conv3_block1_1_bn[0][0]']   
- ation)                                                                                           
-                                                                                                  
- conv3_block1_2_conv (Conv2  (None, 38, 38, 128)          147584    ['conv3_block1_1_relu[0][0]'] 
- D)                                                                                               
-                                                                                                  
- conv3_block1_2_bn (BatchNo  (None, 38, 38, 128)          512       ['conv3_block1_2_conv[0][0]'] 
- rmalization)                                                                                     
-                                                                                                  
- conv3_block1_2_relu (Activ  (None, 38, 38, 128)          0         ['conv3_block1_2_bn[0][0]']   
- ation)                                                                                           
-                                                                                                  
- conv3_block1_0_conv (Conv2  (None, 38, 38, 512)          131584    ['conv2_block3_out[0][0]']    
- D)                                                                                               
-                                                                                                  
- conv3_block1_3_conv (Conv2  (None, 38, 38, 512)          66048     ['conv3_block1_2_relu[0][0]'] 
- D)                                                                                               
-                                                                                                  
- conv3_block1_0_bn (BatchNo  (None, 38, 38, 512)          2048      ['conv3_block1_0_conv[0][0]'] 
- rmalization)                                                                                     
-                                                                                                  
- conv3_block1_3_bn (BatchNo  (None, 38, 38, 512)          2048      ['conv3_block1_3_conv[0][0]'] 
- rmalization)                                                                                     
-                                                                                                  
- conv3_block1_add (Add)      (None, 38, 38, 512)          0         ['conv3_block1_0_bn[0][0]',   
-                                                                     'conv3_block1_3_bn[0][0]']   
-                                                                                                  
- conv3_block1_out (Activati  (None, 38, 38, 512)          0         ['conv3_block1_add[0][0]']    
- on)                                                                                              
-                                                                                                  
- conv3_block2_1_conv (Conv2  (None, 38, 38, 128)          65664     ['conv3_block1_out[0][0]']    
- D)                                                                                               
-                                                                                                  
- conv3_block2_1_bn (BatchNo  (None, 38, 38, 128)          512       ['conv3_block2_1_conv[0][0]'] 
- rmalization)                                                                                     
-                                                                                                  
- conv3_block2_1_relu (Activ  (None, 38, 38, 128)          0         ['conv3_block2_1_bn[0][0]']   
- ation)                                                                                           
-                                                                                                  
- conv3_block2_2_conv (Conv2  (None, 38, 38, 128)          147584    ['conv3_block2_1_relu[0][0]'] 
- D)                                                                                               
-                                                                                                  
- conv3_block2_2_bn (BatchNo  (None, 38, 38, 128)          512       ['conv3_block2_2_conv[0][0]'] 
- rmalization)                                                                                     
-                                                                                                  
- conv3_block2_2_relu (Activ  (None, 38, 38, 128)          0         ['conv3_block2_2_bn[0][0]']   
- ation)                                                                                           
-                                                                                                  
- conv3_block2_3_conv (Conv2  (None, 38, 38, 512)          66048     ['conv3_block2_2_relu[0][0]'] 
- D)                                                                                               
-                                                                                                  
- conv3_block2_3_bn (BatchNo  (None, 38, 38, 512)          2048      ['conv3_block2_3_conv[0][0]'] 
- rmalization)                                                                                     
-                                                                                                  
- conv3_block2_add (Add)      (None, 38, 38, 512)          0         ['conv3_block1_out[0][0]',    
-                                                                     'conv3_block2_3_bn[0][0]']   
-                                                                                                  
- conv3_block2_out (Activati  (None, 38, 38, 512)          0         ['conv3_block2_add[0][0]']    
- on)                                                                                              
-                                                                                                  
- conv3_block3_1_conv (Conv2  (None, 38, 38, 128)          65664     ['conv3_block2_out[0][0]']    
- D)                                                                                               
-                                                                                                  
- conv3_block3_1_bn (BatchNo  (None, 38, 38, 128)          512       ['conv3_block3_1_conv[0][0]'] 
- rmalization)                                                                                     
-                                                                                                  
- conv3_block3_1_relu (Activ  (None, 38, 38, 128)          0         ['conv3_block3_1_bn[0][0]']   
- ation)                                                                                           
-                                                                                                  
- conv3_block3_2_conv (Conv2  (None, 38, 38, 128)          147584    ['conv3_block3_1_relu[0][0]'] 
- D)                                                                                               
-                                                                                                  
- conv3_block3_2_bn (BatchNo  (None, 38, 38, 128)          512       ['conv3_block3_2_conv[0][0]'] 
- rmalization)                                                                                     
-                                                                                                  
- conv3_block3_2_relu (Activ  (None, 38, 38, 128)          0         ['conv3_block3_2_bn[0][0]']   
- ation)                                                                                           
-                                                                                                  
- conv3_block3_3_conv (Conv2  (None, 38, 38, 512)          66048     ['conv3_block3_2_relu[0][0]'] 
- D)                                                                                               
-                                                                                                  
- conv3_block3_3_bn (BatchNo  (None, 38, 38, 512)          2048      ['conv3_block3_3_conv[0][0]'] 
- rmalization)                                                                                     
-                                                                                                  
- conv3_block3_add (Add)      (None, 38, 38, 512)          0         ['conv3_block2_out[0][0]',    
-                                                                     'conv3_block3_3_bn[0][0]']   
-                                                                                                  
- conv3_block3_out (Activati  (None, 38, 38, 512)          0         ['conv3_block3_add[0][0]']    
- on)                                                                                              
-                                                                                                  
- conv3_block4_1_conv (Conv2  (None, 38, 38, 128)          65664     ['conv3_block3_out[0][0]']    
- D)                                                                                               
-                                                                                                  
- conv3_block4_1_bn (BatchNo  (None, 38, 38, 128)          512       ['conv3_block4_1_conv[0][0]'] 
- rmalization)                                                                                     
-                                                                                                  
- conv3_block4_1_relu (Activ  (None, 38, 38, 128)          0         ['conv3_block4_1_bn[0][0]']   
- ation)                                                                                           
-                                                                                                  
- conv3_block4_2_conv (Conv2  (None, 38, 38, 128)          147584    ['conv3_block4_1_relu[0][0]'] 
- D)                                                                                               
-                                                                                                  
- conv3_block4_2_bn (BatchNo  (None, 38, 38, 128)          512       ['conv3_block4_2_conv[0][0]'] 
- rmalization)                                                                                     
-                                                                                                  
- conv3_block4_2_relu (Activ  (None, 38, 38, 128)          0         ['conv3_block4_2_bn[0][0]']   
- ation)                                                                                           
-                                                                                                  
- conv3_block4_3_conv (Conv2  (None, 38, 38, 512)          66048     ['conv3_block4_2_relu[0][0]'] 
- D)                                                                                               
-                                                                                                  
- conv3_block4_3_bn (BatchNo  (None, 38, 38, 512)          2048      ['conv3_block4_3_conv[0][0]'] 
- rmalization)                                                                                     
-                                                                                                  
- conv3_block4_add (Add)      (None, 38, 38, 512)          0         ['conv3_block3_out[0][0]',    
-                                                                     'conv3_block4_3_bn[0][0]']   
-                                                                                                  
- conv3_block4_out (Activati  (None, 38, 38, 512)          0         ['conv3_block4_add[0][0]']    
- on)                                                                                              
-                                                                                                  
- conv4_block1_1_conv (Conv2  (None, 19, 19, 256)          131328    ['conv3_block4_out[0][0]']    
- D)                                                                                               
-                                                                                                  
- conv4_block1_1_bn (BatchNo  (None, 19, 19, 256)          1024      ['conv4_block1_1_conv[0][0]'] 
- rmalization)                                                                                     
-                                                                                                  
- conv4_block1_1_relu (Activ  (None, 19, 19, 256)          0         ['conv4_block1_1_bn[0][0]']   
- ation)                                                                                           
-                                                                                                  
- conv4_block1_2_conv (Conv2  (None, 19, 19, 256)          590080    ['conv4_block1_1_relu[0][0]'] 
- D)                                                                                               
-                                                                                                  
- conv4_block1_2_bn (BatchNo  (None, 19, 19, 256)          1024      ['conv4_block1_2_conv[0][0]'] 
- rmalization)                                                                                     
-                                                                                                  
- conv4_block1_2_relu (Activ  (None, 19, 19, 256)          0         ['conv4_block1_2_bn[0][0]']   
- ation)                                                                                           
-                                                                                                  
- conv4_block1_0_conv (Conv2  (None, 19, 19, 1024)         525312    ['conv3_block4_out[0][0]']    
- D)                                                                                               
-                                                                                                  
- conv4_block1_3_conv (Conv2  (None, 19, 19, 1024)         263168    ['conv4_block1_2_relu[0][0]'] 
- D)                                                                                               
-                                                                                                  
- conv4_block1_0_bn (BatchNo  (None, 19, 19, 1024)         4096      ['conv4_block1_0_conv[0][0]'] 
- rmalization)                                                                                     
-                                                                                                  
- conv4_block1_3_bn (BatchNo  (None, 19, 19, 1024)         4096      ['conv4_block1_3_conv[0][0]'] 
- rmalization)                                                                                     
-                                                                                                  
- conv4_block1_add (Add)      (None, 19, 19, 1024)         0         ['conv4_block1_0_bn[0][0]',   
-                                                                     'conv4_block1_3_bn[0][0]']   
-                                                                                                  
- conv4_block1_out (Activati  (None, 19, 19, 1024)         0         ['conv4_block1_add[0][0]']    
- on)                                                                                              
-                                                                                                  
- conv4_block2_1_conv (Conv2  (None, 19, 19, 256)          262400    ['conv4_block1_out[0][0]']    
- D)                                                                                               
-                                                                                                  
- conv4_block2_1_bn (BatchNo  (None, 19, 19, 256)          1024      ['conv4_block2_1_conv[0][0]'] 
- rmalization)                                                                                     
-                                                                                                  
- conv4_block2_1_relu (Activ  (None, 19, 19, 256)          0         ['conv4_block2_1_bn[0][0]']   
- ation)                                                                                           
-                                                                                                  
- conv4_block2_2_conv (Conv2  (None, 19, 19, 256)          590080    ['conv4_block2_1_relu[0][0]'] 
- D)                                                                                               
-                                                                                                  
- conv4_block2_2_bn (BatchNo  (None, 19, 19, 256)          1024      ['conv4_block2_2_conv[0][0]'] 
- rmalization)                                                                                     
-                                                                                                  
- conv4_block2_2_relu (Activ  (None, 19, 19, 256)          0         ['conv4_block2_2_bn[0][0]']   
- ation)                                                                                           
-                                                                                                  
- conv4_block2_3_conv (Conv2  (None, 19, 19, 1024)         263168    ['conv4_block2_2_relu[0][0]'] 
- D)                                                                                               
-                                                                                                  
- conv4_block2_3_bn (BatchNo  (None, 19, 19, 1024)         4096      ['conv4_block2_3_conv[0][0]'] 
- rmalization)                                                                                     
-                                                                                                  
- conv4_block2_add (Add)      (None, 19, 19, 1024)         0         ['conv4_block1_out[0][0]',    
-                                                                     'conv4_block2_3_bn[0][0]']   
-                                                                                                  
- conv4_block2_out (Activati  (None, 19, 19, 1024)         0         ['conv4_block2_add[0][0]']    
- on)                                                                                              
-                                                                                                  
- conv4_block3_1_conv (Conv2  (None, 19, 19, 256)          262400    ['conv4_block2_out[0][0]']    
- D)                                                                                               
-                                                                                                  
- conv4_block3_1_bn (BatchNo  (None, 19, 19, 256)          1024      ['conv4_block3_1_conv[0][0]'] 
- rmalization)                                                                                     
-                                                                                                  
- conv4_block3_1_relu (Activ  (None, 19, 19, 256)          0         ['conv4_block3_1_bn[0][0]']   
- ation)                                                                                           
-                                                                                                  
- conv4_block3_2_conv (Conv2  (None, 19, 19, 256)          590080    ['conv4_block3_1_relu[0][0]'] 
- D)                                                                                               
-                                                                                                  
- conv4_block3_2_bn (BatchNo  (None, 19, 19, 256)          1024      ['conv4_block3_2_conv[0][0]'] 
- rmalization)                                                                                     
-                                                                                                  
- conv4_block3_2_relu (Activ  (None, 19, 19, 256)          0         ['conv4_block3_2_bn[0][0]']   
- ation)                                                                                           
-                                                                                                  
- conv4_block3_3_conv (Conv2  (None, 19, 19, 1024)         263168    ['conv4_block3_2_relu[0][0]'] 
- D)                                                                                               
-                                                                                                  
- conv4_block3_3_bn (BatchNo  (None, 19, 19, 1024)         4096      ['conv4_block3_3_conv[0][0]'] 
- rmalization)                                                                                     
-                                                                                                  
- conv4_block3_add (Add)      (None, 19, 19, 1024)         0         ['conv4_block2_out[0][0]',    
-                                                                     'conv4_block3_3_bn[0][0]']   
-                                                                                                  
- conv4_block3_out (Activati  (None, 19, 19, 1024)         0         ['conv4_block3_add[0][0]']    
- on)                                                                                              
-                                                                                                  
- conv4_block4_1_conv (Conv2  (None, 19, 19, 256)          262400    ['conv4_block3_out[0][0]']    
- D)                                                                                               
-                                                                                                  
- conv4_block4_1_bn (BatchNo  (None, 19, 19, 256)          1024      ['conv4_block4_1_conv[0][0]'] 
- rmalization)                                                                                     
-                                                                                                  
- conv4_block4_1_relu (Activ  (None, 19, 19, 256)          0         ['conv4_block4_1_bn[0][0]']   
- ation)                                                                                           
-                                                                                                  
- conv4_block4_2_conv (Conv2  (None, 19, 19, 256)          590080    ['conv4_block4_1_relu[0][0]'] 
- D)                                                                                               
-                                                                                                  
- conv4_block4_2_bn (BatchNo  (None, 19, 19, 256)          1024      ['conv4_block4_2_conv[0][0]'] 
- rmalization)                                                                                     
-                                                                                                  
- conv4_block4_2_relu (Activ  (None, 19, 19, 256)          0         ['conv4_block4_2_bn[0][0]']   
- ation)                                                                                           
-                                                                                                  
- conv4_block4_3_conv (Conv2  (None, 19, 19, 1024)         263168    ['conv4_block4_2_relu[0][0]'] 
- D)                                                                                               
-                                                                                                  
- conv4_block4_3_bn (BatchNo  (None, 19, 19, 1024)         4096      ['conv4_block4_3_conv[0][0]'] 
- rmalization)                                                                                     
-                                                                                                  
- conv4_block4_add (Add)      (None, 19, 19, 1024)         0         ['conv4_block3_out[0][0]',    
-                                                                     'conv4_block4_3_bn[0][0]']   
-                                                                                                  
- conv4_block4_out (Activati  (None, 19, 19, 1024)         0         ['conv4_block4_add[0][0]']    
- on)                                                                                              
-                                                                                                  
- conv4_block5_1_conv (Conv2  (None, 19, 19, 256)          262400    ['conv4_block4_out[0][0]']    
- D)                                                                                               
-                                                                                                  
- conv4_block5_1_bn (BatchNo  (None, 19, 19, 256)          1024      ['conv4_block5_1_conv[0][0]'] 
- rmalization)                                                                                     
-                                                                                                  
- conv4_block5_1_relu (Activ  (None, 19, 19, 256)          0         ['conv4_block5_1_bn[0][0]']   
- ation)                                                                                           
-                                                                                                  
- conv4_block5_2_conv (Conv2  (None, 19, 19, 256)          590080    ['conv4_block5_1_relu[0][0]'] 
- D)                                                                                               
-                                                                                                  
- conv4_block5_2_bn (BatchNo  (None, 19, 19, 256)          1024      ['conv4_block5_2_conv[0][0]'] 
- rmalization)                                                                                     
-                                                                                                  
- conv4_block5_2_relu (Activ  (None, 19, 19, 256)          0         ['conv4_block5_2_bn[0][0]']   
- ation)                                                                                           
-                                                                                                  
- conv4_block5_3_conv (Conv2  (None, 19, 19, 1024)         263168    ['conv4_block5_2_relu[0][0]'] 
- D)                                                                                               
-                                                                                                  
- conv4_block5_3_bn (BatchNo  (None, 19, 19, 1024)         4096      ['conv4_block5_3_conv[0][0]'] 
- rmalization)                                                                                     
-                                                                                                  
- conv4_block5_add (Add)      (None, 19, 19, 1024)         0         ['conv4_block4_out[0][0]',    
-                                                                     'conv4_block5_3_bn[0][0]']   
-                                                                                                  
- conv4_block5_out (Activati  (None, 19, 19, 1024)         0         ['conv4_block5_add[0][0]']    
- on)                                                                                              
-                                                                                                  
- conv4_block6_1_conv (Conv2  (None, 19, 19, 256)          262400    ['conv4_block5_out[0][0]']    
- D)                                                                                               
-                                                                                                  
- conv4_block6_1_bn (BatchNo  (None, 19, 19, 256)          1024      ['conv4_block6_1_conv[0][0]'] 
- rmalization)                                                                                     
-                                                                                                  
- conv4_block6_1_relu (Activ  (None, 19, 19, 256)          0         ['conv4_block6_1_bn[0][0]']   
- ation)                                                                                           
-                                                                                                  
- conv4_block6_2_conv (Conv2  (None, 19, 19, 256)          590080    ['conv4_block6_1_relu[0][0]'] 
- D)                                                                                               
-                                                                                                  
- conv4_block6_2_bn (BatchNo  (None, 19, 19, 256)          1024      ['conv4_block6_2_conv[0][0]'] 
- rmalization)                                                                                     
-                                                                                                  
- conv4_block6_2_relu (Activ  (None, 19, 19, 256)          0         ['conv4_block6_2_bn[0][0]']   
- ation)                                                                                           
-                                                                                                  
- conv4_block6_3_conv (Conv2  (None, 19, 19, 1024)         263168    ['conv4_block6_2_relu[0][0]'] 
- D)                                                                                               
-                                                                                                  
- conv4_block6_3_bn (BatchNo  (None, 19, 19, 1024)         4096      ['conv4_block6_3_conv[0][0]'] 
- rmalization)                                                                                     
-                                                                                                  
- conv4_block6_add (Add)      (None, 19, 19, 1024)         0         ['conv4_block5_out[0][0]',    
-                                                                     'conv4_block6_3_bn[0][0]']   
-                                                                                                  
- conv4_block6_out (Activati  (None, 19, 19, 1024)         0         ['conv4_block6_add[0][0]']    
- on)                                                                                              
-                                                                                                  
- conv5_block1_1_conv (Conv2  (None, 10, 10, 512)          524800    ['conv4_block6_out[0][0]']    
- D)                                                                                               
-                                                                                                  
- conv5_block1_1_bn (BatchNo  (None, 10, 10, 512)          2048      ['conv5_block1_1_conv[0][0]'] 
- rmalization)                                                                                     
-                                                                                                  
- conv5_block1_1_relu (Activ  (None, 10, 10, 512)          0         ['conv5_block1_1_bn[0][0]']   
- ation)                                                                                           
-                                                                                                  
- conv5_block1_2_conv (Conv2  (None, 10, 10, 512)          2359808   ['conv5_block1_1_relu[0][0]'] 
- D)                                                                                               
-                                                                                                  
- conv5_block1_2_bn (BatchNo  (None, 10, 10, 512)          2048      ['conv5_block1_2_conv[0][0]'] 
- rmalization)                                                                                     
-                                                                                                  
- conv5_block1_2_relu (Activ  (None, 10, 10, 512)          0         ['conv5_block1_2_bn[0][0]']   
- ation)                                                                                           
-                                                                                                  
- conv5_block1_0_conv (Conv2  (None, 10, 10, 2048)         2099200   ['conv4_block6_out[0][0]']    
- D)                                                                                               
-                                                                                                  
- conv5_block1_3_conv (Conv2  (None, 10, 10, 2048)         1050624   ['conv5_block1_2_relu[0][0]'] 
- D)                                                                                               
-                                                                                                  
- conv5_block1_0_bn (BatchNo  (None, 10, 10, 2048)         8192      ['conv5_block1_0_conv[0][0]'] 
- rmalization)                                                                                     
-                                                                                                  
- conv5_block1_3_bn (BatchNo  (None, 10, 10, 2048)         8192      ['conv5_block1_3_conv[0][0]'] 
- rmalization)                                                                                     
-                                                                                                  
- conv5_block1_add (Add)      (None, 10, 10, 2048)         0         ['conv5_block1_0_bn[0][0]',   
-                                                                     'conv5_block1_3_bn[0][0]']   
-                                                                                                  
- conv5_block1_out (Activati  (None, 10, 10, 2048)         0         ['conv5_block1_add[0][0]']    
- on)                                                                                              
-                                                                                                  
- conv5_block2_1_conv (Conv2  (None, 10, 10, 512)          1049088   ['conv5_block1_out[0][0]']    
- D)                                                                                               
-                                                                                                  
- conv5_block2_1_bn (BatchNo  (None, 10, 10, 512)          2048      ['conv5_block2_1_conv[0][0]'] 
- rmalization)                                                                                     
-                                                                                                  
- conv5_block2_1_relu (Activ  (None, 10, 10, 512)          0         ['conv5_block2_1_bn[0][0]']   
- ation)                                                                                           
-                                                                                                  
- conv5_block2_2_conv (Conv2  (None, 10, 10, 512)          2359808   ['conv5_block2_1_relu[0][0]'] 
- D)                                                                                               
-                                                                                                  
- conv5_block2_2_bn (BatchNo  (None, 10, 10, 512)          2048      ['conv5_block2_2_conv[0][0]'] 
- rmalization)                                                                                     
-                                                                                                  
- conv5_block2_2_relu (Activ  (None, 10, 10, 512)          0         ['conv5_block2_2_bn[0][0]']   
- ation)                                                                                           
-                                                                                                  
- conv5_block2_3_conv (Conv2  (None, 10, 10, 2048)         1050624   ['conv5_block2_2_relu[0][0]'] 
- D)                                                                                               
-                                                                                                  
- conv5_block2_3_bn (BatchNo  (None, 10, 10, 2048)         8192      ['conv5_block2_3_conv[0][0]'] 
- rmalization)                                                                                     
-                                                                                                  
- conv5_block2_add (Add)      (None, 10, 10, 2048)         0         ['conv5_block1_out[0][0]',    
-                                                                     'conv5_block2_3_bn[0][0]']   
-                                                                                                  
- conv5_block2_out (Activati  (None, 10, 10, 2048)         0         ['conv5_block2_add[0][0]']    
- on)                                                                                              
-                                                                                                  
- conv5_block3_1_conv (Conv2  (None, 10, 10, 512)          1049088   ['conv5_block2_out[0][0]']    
- D)                                                                                               
-                                                                                                  
- conv5_block3_1_bn (BatchNo  (None, 10, 10, 512)          2048      ['conv5_block3_1_conv[0][0]'] 
- rmalization)                                                                                     
-                                                                                                  
- conv5_block3_1_relu (Activ  (None, 10, 10, 512)          0         ['conv5_block3_1_bn[0][0]']   
- ation)                                                                                           
-                                                                                                  
- conv5_block3_2_conv (Conv2  (None, 10, 10, 512)          2359808   ['conv5_block3_1_relu[0][0]'] 
- D)                                                                                               
-                                                                                                  
- conv5_block3_2_bn (BatchNo  (None, 10, 10, 512)          2048      ['conv5_block3_2_conv[0][0]'] 
- rmalization)                                                                                     
-                                                                                                  
- conv5_block3_2_relu (Activ  (None, 10, 10, 512)          0         ['conv5_block3_2_bn[0][0]']   
- ation)                                                                                           
-                                                                                                  
- conv5_block3_3_conv (Conv2  (None, 10, 10, 2048)         1050624   ['conv5_block3_2_relu[0][0]'] 
- D)                                                                                               
-                                                                                                  
- conv5_block3_3_bn (BatchNo  (None, 10, 10, 2048)         8192      ['conv5_block3_3_conv[0][0]'] 
- rmalization)                                                                                     
-                                                                                                  
- conv5_block3_add (Add)      (None, 10, 10, 2048)         0         ['conv5_block2_out[0][0]',    
-                                                                     'conv5_block3_3_bn[0][0]']   
-                                                                                                  
- conv5_block3_out (Activati  (None, 10, 10, 2048)         0         ['conv5_block3_add[0][0]']    
- on)                                                                                              
-                                                                                                  
-==================================================================================================
-Total params: 23587712 (89.98 MB)
-Trainable params: 23534592 (89.78 MB)
-Non-trainable params: 53120 (207.50 KB)
-__________________________________________________________________________________________________
-Number of layers in base_model: 
-175
-Model: "model"
-_________________________________________________________________
- Layer (type)                Output Shape              Param #   
-=================================================================
- input_2 (InputLayer)        [(None, 299, 299, 3)]     0         
-                                                                 
- random_flip (RandomFlip)    (None, 299, 299, 3)       0         
-                                                                 
- random_rotation (RandomRot  (None, 299, 299, 3)       0         
- ation)                                                          
-                                                                 
- random_brightness (RandomB  (None, 299, 299, 3)       0         
- rightness)                                                      
-                                                                 
- random_contrast (RandomCon  (None, 299, 299, 3)       0         
- trast)                                                          
-                                                                 
- tf.__operators__.getitem (  (None, 299, 299, 3)       0         
- SlicingOpLambda)                                                
-                                                                 
- tf.nn.bias_add (TFOpLambda  (None, 299, 299, 3)       0         
- )                                                               
-                                                                 
- resnet50 (Functional)       (None, 10, 10, 2048)      23587712  
-                                                                 
- global_average_pooling2d (  (None, 2048)              0         
- GlobalAveragePooling2D)                                         
-                                                                 
- dropout (Dropout)           (None, 2048)              0         
-                                                                 
- dense_1 (Dense)             (None, 80)                163920    
-                                                                 
- dense_2 (Dense)             (None, 80)                6480      
-                                                                 
- dropout_1 (Dropout)         (None, 80)                0         
-                                                                 
- dense (Dense)               (None, 8)                 648       
-                                                                 
-=================================================================
-Total params: 23758760 (90.63 MB)
-Trainable params: 171048 (668.16 KB)
-Non-trainable params: 23587712 (89.98 MB)
-_________________________________________________________________
-Model summary before fine tuning: None
-WARNING:tensorflow:`period` argument is deprecated. Please use `save_freq` to specify the frequency in number of batches seen.
-entered_csv_log
-2024-06-11 08:18:51.486233: I tensorflow/compiler/xla/stream_executor/cuda/cuda_dnn.cc:442] Loaded cuDNN version 8600
-2024-06-11 08:18:51.620248: I tensorflow/tsl/platform/default/subprocess.cc:304] Start cannot spawn child process: No such file or directory
-2024-06-11 08:18:52.917034: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x32537510 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
-2024-06-11 08:18:52.917128: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Quadro RTX 8000, Compute Capability 7.5
-2024-06-11 08:18:52.959438: I ./tensorflow/compiler/jit/device_compiler.h:186] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
-  1/640 [..............................] - ETA: 1:23:53 - loss: 2.6056 - accuracy: 0.0000e+00  3/640 [..............................] - ETA: 26s - loss: 2.4321 - accuracy: 0.0667          5/640 [..............................] - ETA: 24s - loss: 2.4166 - accuracy: 0.1200  7/640 [..............................] - ETA: 23s - loss: 2.3748 - accuracy: 0.1143  9/640 [..............................] - ETA: 23s - loss: 2.3667 - accuracy: 0.1111 11/640 [..............................] - ETA: 23s - loss: 2.3309 - accuracy: 0.1364 13/640 [..............................] - ETA: 23s - loss: 2.3181 - accuracy: 0.1308 15/640 [..............................] - ETA: 23s - loss: 2.3200 - accuracy: 0.1133 17/640 [..............................] - ETA: 23s - loss: 2.3132 - accuracy: 0.1118 19/640 [..............................] - ETA: 22s - loss: 2.3091 - accuracy: 0.1000 21/640 [..............................] - ETA: 22s - loss: 2.3126 - accuracy: 0.1000 23/640 [>.............................] - ETA: 22s - loss: 2.2923 - accuracy: 0.1043 25/640 [>.............................] - ETA: 22s - loss: 2.2715 - accuracy: 0.1080 27/640 [>.............................] - ETA: 22s - loss: 2.2795 - accuracy: 0.1111 29/640 [>.............................] - ETA: 22s - loss: 2.2795 - accuracy: 0.1034 31/640 [>.............................] - ETA: 22s - loss: 2.2754 - accuracy: 0.1065 33/640 [>.............................] - ETA: 22s - loss: 2.2772 - accuracy: 0.1061 35/640 [>.............................] - ETA: 22s - loss: 2.2815 - accuracy: 0.1029 37/640 [>.............................] - ETA: 22s - loss: 2.2689 - accuracy: 0.1081 39/640 [>.............................] - ETA: 22s - loss: 2.2658 - accuracy: 0.1051 41/640 [>.............................] - ETA: 22s - loss: 2.2548 - accuracy: 0.1073 43/640 [=>............................] - ETA: 22s - loss: 2.2415 - accuracy: 0.1116 45/640 [=>............................] - ETA: 22s - loss: 2.2308 - accuracy: 0.1200 47/640 [=>............................] - ETA: 22s - loss: 2.2247 - accuracy: 0.1277 49/640 [=>............................] - ETA: 22s - loss: 2.2259 - accuracy: 0.1286 51/640 [=>............................] - ETA: 21s - loss: 2.2189 - accuracy: 0.1333 53/640 [=>............................] - ETA: 21s - loss: 2.2213 - accuracy: 0.1321 55/640 [=>............................] - ETA: 21s - loss: 2.2150 - accuracy: 0.1345 57/640 [=>............................] - ETA: 21s - loss: 2.2107 - accuracy: 0.1351 59/640 [=>............................] - ETA: 21s - loss: 2.2074 - accuracy: 0.1373 61/640 [=>............................] - ETA: 21s - loss: 2.1992 - accuracy: 0.1426 63/640 [=>............................] - ETA: 21s - loss: 2.1897 - accuracy: 0.1492 65/640 [==>...........................] - ETA: 21s - loss: 2.1851 - accuracy: 0.1492 67/640 [==>...........................] - ETA: 21s - loss: 2.1841 - accuracy: 0.1537 69/640 [==>...........................] - ETA: 21s - loss: 2.1809 - accuracy: 0.1551 71/640 [==>...........................] - ETA: 21s - loss: 2.1780 - accuracy: 0.1577 73/640 [==>...........................] - ETA: 21s - loss: 2.1708 - accuracy: 0.1644 75/640 [==>...........................] - ETA: 20s - loss: 2.1686 - accuracy: 0.1640 77/640 [==>...........................] - ETA: 20s - loss: 2.1669 - accuracy: 0.1636 79/640 [==>...........................] - ETA: 20s - loss: 2.1646 - accuracy: 0.1620 81/640 [==>...........................] - ETA: 20s - loss: 2.1622 - accuracy: 0.1617 83/640 [==>...........................] - ETA: 20s - loss: 2.1590 - accuracy: 0.1627 85/640 [==>...........................] - ETA: 20s - loss: 2.1603 - accuracy: 0.1624 87/640 [===>..........................] - ETA: 20s - loss: 2.1588 - accuracy: 0.1609 89/640 [===>..........................] - ETA: 20s - loss: 2.1585 - accuracy: 0.1607 91/640 [===>..........................] - ETA: 20s - loss: 2.1546 - accuracy: 0.1604 93/640 [===>..........................] - ETA: 20s - loss: 2.1508 - accuracy: 0.1634 95/640 [===>..........................] - ETA: 20s - loss: 2.1504 - accuracy: 0.1642 97/640 [===>..........................] - ETA: 20s - loss: 2.1471 - accuracy: 0.1670 99/640 [===>..........................] - ETA: 20s - loss: 2.1423 - accuracy: 0.1667101/640 [===>..........................] - ETA: 19s - loss: 2.1390 - accuracy: 0.1673103/640 [===>..........................] - ETA: 19s - loss: 2.1398 - accuracy: 0.1650105/640 [===>..........................] - ETA: 19s - loss: 2.1370 - accuracy: 0.1657107/640 [====>.........................] - ETA: 19s - loss: 2.1346 - accuracy: 0.1645109/640 [====>.........................] - ETA: 19s - loss: 2.1342 - accuracy: 0.1633111/640 [====>.........................] - ETA: 19s - loss: 2.1329 - accuracy: 0.1622113/640 [====>.........................] - ETA: 19s - loss: 2.1311 - accuracy: 0.1637115/640 [====>.........................] - ETA: 19s - loss: 2.1286 - accuracy: 0.1635117/640 [====>.........................] - ETA: 19s - loss: 2.1262 - accuracy: 0.1650119/640 [====>.........................] - ETA: 19s - loss: 2.1235 - accuracy: 0.1655121/640 [====>.........................] - ETA: 19s - loss: 2.1225 - accuracy: 0.1661123/640 [====>.........................] - ETA: 19s - loss: 2.1185 - accuracy: 0.1699125/640 [====>.........................] - ETA: 19s - loss: 2.1169 - accuracy: 0.1696127/640 [====>.........................] - ETA: 19s - loss: 2.1167 - accuracy: 0.1693129/640 [=====>........................] - ETA: 18s - loss: 2.1156 - accuracy: 0.1690131/640 [=====>........................] - ETA: 18s - loss: 2.1137 - accuracy: 0.1695133/640 [=====>........................] - ETA: 18s - loss: 2.1114 - accuracy: 0.1714135/640 [=====>........................] - ETA: 18s - loss: 2.1092 - accuracy: 0.1748137/640 [=====>........................] - ETA: 18s - loss: 2.1050 - accuracy: 0.1774139/640 [=====>........................] - ETA: 18s - loss: 2.1033 - accuracy: 0.1791141/640 [=====>........................] - ETA: 18s - loss: 2.0994 - accuracy: 0.1809143/640 [=====>........................] - ETA: 18s - loss: 2.0960 - accuracy: 0.1818145/640 [=====>........................] - ETA: 18s - loss: 2.0927 - accuracy: 0.1828147/640 [=====>........................] - ETA: 18s - loss: 2.0915 - accuracy: 0.1816149/640 [=====>........................] - ETA: 18s - loss: 2.0925 - accuracy: 0.1812151/640 [======>.......................] - ETA: 18s - loss: 2.0913 - accuracy: 0.1795153/640 [======>.......................] - ETA: 18s - loss: 2.0908 - accuracy: 0.1797155/640 [======>.......................] - ETA: 17s - loss: 2.0906 - accuracy: 0.1806157/640 [======>.......................] - ETA: 17s - loss: 2.0890 - accuracy: 0.1822159/640 [======>.......................] - ETA: 17s - loss: 2.0897 - accuracy: 0.1811161/640 [======>.......................] - ETA: 17s - loss: 2.0897 - accuracy: 0.1801163/640 [======>.......................] - ETA: 17s - loss: 2.0901 - accuracy: 0.1798165/640 [======>.......................] - ETA: 17s - loss: 2.0877 - accuracy: 0.1818167/640 [======>.......................] - ETA: 17s - loss: 2.0860 - accuracy: 0.1832169/640 [======>.......................] - ETA: 17s - loss: 2.0833 - accuracy: 0.1846171/640 [=======>......................] - ETA: 17s - loss: 2.0813 - accuracy: 0.1860173/640 [=======>......................] - ETA: 17s - loss: 2.0780 - accuracy: 0.1879175/640 [=======>......................] - ETA: 17s - loss: 2.0775 - accuracy: 0.1874177/640 [=======>......................] - ETA: 17s - loss: 2.0772 - accuracy: 0.1859179/640 [=======>......................] - ETA: 17s - loss: 2.0736 - accuracy: 0.1866181/640 [=======>......................] - ETA: 16s - loss: 2.0728 - accuracy: 0.1873183/640 [=======>......................] - ETA: 16s - loss: 2.0703 - accuracy: 0.1880185/640 [=======>......................] - ETA: 16s - loss: 2.0710 - accuracy: 0.1870187/640 [=======>......................] - ETA: 16s - loss: 2.0708 - accuracy: 0.1872189/640 [=======>......................] - ETA: 16s - loss: 2.0683 - accuracy: 0.1873191/640 [=======>......................] - ETA: 16s - loss: 2.0661 - accuracy: 0.1895193/640 [========>.....................] - ETA: 16s - loss: 2.0637 - accuracy: 0.1912195/640 [========>.....................] - ETA: 16s - loss: 2.0624 - accuracy: 0.1918197/640 [========>.....................] - ETA: 16s - loss: 2.0590 - accuracy: 0.1959199/640 [========>.....................] - ETA: 16s - loss: 2.0567 - accuracy: 0.1980201/640 [========>.....................] - ETA: 16s - loss: 2.0558 - accuracy: 0.2000203/640 [========>.....................] - ETA: 16s - loss: 2.0543 - accuracy: 0.2020205/640 [========>.....................] - ETA: 16s - loss: 2.0535 - accuracy: 0.2020207/640 [========>.....................] - ETA: 16s - loss: 2.0513 - accuracy: 0.2024209/640 [========>.....................] - ETA: 15s - loss: 2.0501 - accuracy: 0.2038211/640 [========>.....................] - ETA: 15s - loss: 2.0475 - accuracy: 0.2057213/640 [========>.....................] - ETA: 15s - loss: 2.0463 - accuracy: 0.2070215/640 [=========>....................] - ETA: 15s - loss: 2.0441 - accuracy: 0.2065217/640 [=========>....................] - ETA: 15s - loss: 2.0426 - accuracy: 0.2078219/640 [=========>....................] - ETA: 15s - loss: 2.0416 - accuracy: 0.2073221/640 [=========>....................] - ETA: 15s - loss: 2.0394 - accuracy: 0.2090223/640 [=========>....................] - ETA: 15s - loss: 2.0383 - accuracy: 0.2103225/640 [=========>....................] - ETA: 15s - loss: 2.0384 - accuracy: 0.2102227/640 [=========>....................] - ETA: 15s - loss: 2.0370 - accuracy: 0.2110229/640 [=========>....................] - ETA: 15s - loss: 2.0346 - accuracy: 0.2122231/640 [=========>....................] - ETA: 15s - loss: 2.0335 - accuracy: 0.2117233/640 [=========>....................] - ETA: 15s - loss: 2.0304 - accuracy: 0.2124235/640 [==========>...................] - ETA: 15s - loss: 2.0274 - accuracy: 0.2136237/640 [==========>...................] - ETA: 14s - loss: 2.0257 - accuracy: 0.2156239/640 [==========>...................] - ETA: 14s - loss: 2.0252 - accuracy: 0.2151241/640 [==========>...................] - ETA: 14s - loss: 2.0245 - accuracy: 0.2149243/640 [==========>...................] - ETA: 14s - loss: 2.0231 - accuracy: 0.2156245/640 [==========>...................] - ETA: 14s - loss: 2.0221 - accuracy: 0.2155247/640 [==========>...................] - ETA: 14s - loss: 2.0190 - accuracy: 0.2186249/640 [==========>...................] - ETA: 14s - loss: 2.0177 - accuracy: 0.2185251/640 [==========>...................] - ETA: 14s - loss: 2.0169 - accuracy: 0.2191253/640 [==========>...................] - ETA: 14s - loss: 2.0157 - accuracy: 0.2202255/640 [==========>...................] - ETA: 14s - loss: 2.0139 - accuracy: 0.2208257/640 [===========>..................] - ETA: 14s - loss: 2.0115 - accuracy: 0.2214259/640 [===========>..................] - ETA: 14s - loss: 2.0103 - accuracy: 0.2212261/640 [===========>..................] - ETA: 14s - loss: 2.0091 - accuracy: 0.2222263/640 [===========>..................] - ETA: 13s - loss: 2.0078 - accuracy: 0.2232265/640 [===========>..................] - ETA: 13s - loss: 2.0064 - accuracy: 0.2238267/640 [===========>..................] - ETA: 13s - loss: 2.0034 - accuracy: 0.2262269/640 [===========>..................] - ETA: 13s - loss: 2.0015 - accuracy: 0.2275271/640 [===========>..................] - ETA: 13s - loss: 2.0008 - accuracy: 0.2273273/640 [===========>..................] - ETA: 13s - loss: 1.9997 - accuracy: 0.2267275/640 [===========>..................] - ETA: 13s - loss: 1.9979 - accuracy: 0.2273277/640 [===========>..................] - ETA: 13s - loss: 1.9964 - accuracy: 0.2289279/640 [============>.................] - ETA: 13s - loss: 1.9943 - accuracy: 0.2305281/640 [============>.................] - ETA: 13s - loss: 1.9937 - accuracy: 0.2313283/640 [============>.................] - ETA: 13s - loss: 1.9927 - accuracy: 0.2325285/640 [============>.................] - ETA: 13s - loss: 1.9913 - accuracy: 0.2326287/640 [============>.................] - ETA: 13s - loss: 1.9893 - accuracy: 0.2331289/640 [============>.................] - ETA: 13s - loss: 1.9888 - accuracy: 0.2325291/640 [============>.................] - ETA: 12s - loss: 1.9886 - accuracy: 0.2337293/640 [============>.................] - ETA: 12s - loss: 1.9872 - accuracy: 0.2341295/640 [============>.................] - ETA: 12s - loss: 1.9858 - accuracy: 0.2346297/640 [============>.................] - ETA: 12s - loss: 1.9850 - accuracy: 0.2350299/640 [=============>................] - ETA: 12s - loss: 1.9851 - accuracy: 0.2348301/640 [=============>................] - ETA: 12s - loss: 1.9840 - accuracy: 0.2359303/640 [=============>................] - ETA: 12s - loss: 1.9821 - accuracy: 0.2373305/640 [=============>................] - ETA: 12s - loss: 1.9809 - accuracy: 0.2374307/640 [=============>................] - ETA: 12s - loss: 1.9800 - accuracy: 0.2381309/640 [=============>................] - ETA: 12s - loss: 1.9778 - accuracy: 0.2395311/640 [=============>................] - ETA: 12s - loss: 1.9755 - accuracy: 0.2405313/640 [=============>................] - ETA: 12s - loss: 1.9749 - accuracy: 0.2415315/640 [=============>................] - ETA: 12s - loss: 1.9739 - accuracy: 0.2416317/640 [=============>................] - ETA: 11s - loss: 1.9734 - accuracy: 0.2426319/640 [=============>................] - ETA: 11s - loss: 1.9723 - accuracy: 0.2433321/640 [==============>...............] - ETA: 11s - loss: 1.9708 - accuracy: 0.2449323/640 [==============>...............] - ETA: 11s - loss: 1.9683 - accuracy: 0.2464325/640 [==============>...............] - ETA: 11s - loss: 1.9665 - accuracy: 0.2477327/640 [==============>...............] - ETA: 11s - loss: 1.9664 - accuracy: 0.2474329/640 [==============>...............] - ETA: 11s - loss: 1.9662 - accuracy: 0.2474331/640 [==============>...............] - ETA: 11s - loss: 1.9659 - accuracy: 0.2477333/640 [==============>...............] - ETA: 11s - loss: 1.9649 - accuracy: 0.2483335/640 [==============>...............] - ETA: 11s - loss: 1.9640 - accuracy: 0.2490337/640 [==============>...............] - ETA: 11s - loss: 1.9628 - accuracy: 0.2496339/640 [==============>...............] - ETA: 11s - loss: 1.9622 - accuracy: 0.2501341/640 [==============>...............] - ETA: 11s - loss: 1.9597 - accuracy: 0.2516343/640 [===============>..............] - ETA: 11s - loss: 1.9581 - accuracy: 0.2522345/640 [===============>..............] - ETA: 10s - loss: 1.9573 - accuracy: 0.2530347/640 [===============>..............] - ETA: 10s - loss: 1.9563 - accuracy: 0.2539349/640 [===============>..............] - ETA: 10s - loss: 1.9543 - accuracy: 0.2547351/640 [===============>..............] - ETA: 10s - loss: 1.9530 - accuracy: 0.2561353/640 [===============>..............] - ETA: 10s - loss: 1.9525 - accuracy: 0.2572355/640 [===============>..............] - ETA: 10s - loss: 1.9491 - accuracy: 0.2603357/640 [===============>..............] - ETA: 10s - loss: 1.9477 - accuracy: 0.2611359/640 [===============>..............] - ETA: 10s - loss: 1.9455 - accuracy: 0.2627361/640 [===============>..............] - ETA: 10s - loss: 1.9447 - accuracy: 0.2640363/640 [================>.............] - ETA: 10s - loss: 1.9437 - accuracy: 0.2645365/640 [================>.............] - ETA: 10s - loss: 1.9421 - accuracy: 0.2652367/640 [================>.............] - ETA: 10s - loss: 1.9413 - accuracy: 0.2651369/640 [================>.............] - ETA: 10s - loss: 1.9403 - accuracy: 0.2659371/640 [================>.............] - ETA: 9s - loss: 1.9392 - accuracy: 0.2666 373/640 [================>.............] - ETA: 9s - loss: 1.9382 - accuracy: 0.2668375/640 [================>.............] - ETA: 9s - loss: 1.9378 - accuracy: 0.2667377/640 [================>.............] - ETA: 9s - loss: 1.9365 - accuracy: 0.2682379/640 [================>.............] - ETA: 9s - loss: 1.9349 - accuracy: 0.2694381/640 [================>.............] - ETA: 9s - loss: 1.9333 - accuracy: 0.2703383/640 [================>.............] - ETA: 9s - loss: 1.9323 - accuracy: 0.2702385/640 [=================>............] - ETA: 9s - loss: 1.9306 - accuracy: 0.2712387/640 [=================>............] - ETA: 9s - loss: 1.9298 - accuracy: 0.2711389/640 [=================>............] - ETA: 9s - loss: 1.9286 - accuracy: 0.2715391/640 [=================>............] - ETA: 9s - loss: 1.9281 - accuracy: 0.2711393/640 [=================>............] - ETA: 9s - loss: 1.9279 - accuracy: 0.2720395/640 [=================>............] - ETA: 9s - loss: 1.9269 - accuracy: 0.2729397/640 [=================>............] - ETA: 9s - loss: 1.9256 - accuracy: 0.2743399/640 [=================>............] - ETA: 8s - loss: 1.9241 - accuracy: 0.2754401/640 [=================>............] - ETA: 8s - loss: 1.9226 - accuracy: 0.2763403/640 [=================>............] - ETA: 8s - loss: 1.9217 - accuracy: 0.2769405/640 [=================>............] - ETA: 8s - loss: 1.9216 - accuracy: 0.2765407/640 [==================>...........] - ETA: 8s - loss: 1.9203 - accuracy: 0.2774409/640 [==================>...........] - ETA: 8s - loss: 1.9188 - accuracy: 0.2778411/640 [==================>...........] - ETA: 8s - loss: 1.9176 - accuracy: 0.2786413/640 [==================>...........] - ETA: 8s - loss: 1.9165 - accuracy: 0.2792415/640 [==================>...........] - ETA: 8s - loss: 1.9154 - accuracy: 0.2795417/640 [==================>...........] - ETA: 8s - loss: 1.9150 - accuracy: 0.2801419/640 [==================>...........] - ETA: 8s - loss: 1.9135 - accuracy: 0.2807421/640 [==================>...........] - ETA: 8s - loss: 1.9129 - accuracy: 0.2808423/640 [==================>...........] - ETA: 8s - loss: 1.9126 - accuracy: 0.2806425/640 [==================>...........] - ETA: 7s - loss: 1.9114 - accuracy: 0.2809427/640 [===================>..........] - ETA: 7s - loss: 1.9107 - accuracy: 0.2813429/640 [===================>..........] - ETA: 7s - loss: 1.9099 - accuracy: 0.2814431/640 [===================>..........] - ETA: 7s - loss: 1.9089 - accuracy: 0.2821433/640 [===================>..........] - ETA: 7s - loss: 1.9081 - accuracy: 0.2827slurmstepd: error: *** JOB 51526488 ON compute-8-5 CANCELLED AT 2024-06-11T08:19:09 ***

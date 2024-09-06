@@ -4,7 +4,7 @@
 #SBATCH --gres=gpu:1
 #SBATCH --mem=200G
 #SBATCH --time=08:00:00
-#SBATCH --output=/data/kraken/coastal_project/coastal_proj_code/orange_cable/vi_flipout/plot_multiple_from_pickle_10_20_cable_Noimage-%j.txt    
+#SBATCH --output=/data/kraken/coastal_project/coastal_proj_code/orange_cable/print_multiple_from_pickle_10_20_cable_Noimage-%j.txt    
 #SBATCH --partition=kraken
 #SBATCH --mail-type=END
 #SBATCH --mail-user=lucian.rombado@nps.edu
@@ -20,5 +20,5 @@ source activate thesis_work
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CONDA_PREFIX/lib
 
 
-python3 -u /data/kraken/coastal_project/coastal_proj_code/orange_cable/vi_flipout/plot_cable.py \
+python3 -u /data/kraken/coastal_project/coastal_proj_code/orange_cable/print_cable.py \
 
