@@ -3,3 +3,4 @@
 *imagenet_checkpoints
 *pickle_dump
 *.pickle
+*model_checkpoints
