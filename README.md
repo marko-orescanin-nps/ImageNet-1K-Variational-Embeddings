@@ -10,6 +10,8 @@ This repository contains all project source code as well as a Jupyter Notebook w
 ## Roadmap
 The datasets, model checkpoints, and some pickle evaluation files for this project are available for download at https://nps.app.box.com/folder/260201116211 due to GitHub storage limits.
 
+**For users at Naval Postgraduate School, source code is located at /data/kraken/coastal_thesis_rombado/ImageNet-1K-Variational-Embeddings **
+
 ## Dataset
 The coastal dataset is available on the box site along with the out of distribution datasets used for visualizations in the paper (Alaska, Florida, and Orange Cable).
 
