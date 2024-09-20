@@ -8,7 +8,7 @@ Uncertainty aware classification of aerial coastal imagery using probabilistic c
 This repository contains all project source code as well as a Jupyter Notebook walk-through of different visualizations. This repository is the source code for the IEEE Access paper titled "Uncertainty-Aware Aerial Coastal Imagery Pattern Recognition Through Transfer Learning with ImageNet-1K Variational Embeddings".
 
 ## Roadmap
-The datasets, model checkpoints, and some pickle evaluation files for this project are available for download at https://nps.app.box.com/folder/260201116211 due to GitHub storage limits.
+The datasets, model checkpoints, and some pickle evaluation files for this project are available for download at https://nps.box.com/s/9xzxh7kfsddadsn2b44lk9bov1oqrr1t due to GitHub storage limits.
 
 **For users at Naval Postgraduate School, source code is located at /data/kraken/coastal_thesis_rombado/ImageNet-1K-Variational-Embeddings **
 
